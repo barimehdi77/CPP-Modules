@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 04:34:45 by mbari             #+#    #+#              #
-#    Updated: 2021/08/10 04:47:40 by mbari            ###   ########.fr        #
+#    Updated: 2021/08/10 05:03:24 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ contact.cpp
 
 
 # Define objects for all sources
-OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.c=.o))
+OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.cpp=.o))
 
 # Name the compiler
 CC = clang++
@@ -54,12 +54,14 @@ all: credit $(NAME)
 	@echo "$(BLUE)██████████████████████ Compiling is DONE ███████████████████████$(RESET)"
 	@echo "         Made with love by : \033[1;91mmbari\033[m"
 
-
+head:
+	@echo "$(BLUE)███████████████████████ Making PhoneBook ███████████████████████$(RESET)"
+	
 # philosophers making rules
 $(NAME): head $(OBJS)
 	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@
 
-$(OBJECTSDIR)/%.o: %.c $(HEADERS_FOLDER)
+$(OBJECTSDIR)/%.o: $(SRCS_FOLDER)/%.cpp $(HEADERS_FOLDER)
 	@$(MKDIR) $(dir $@)
 	@echo "$(BLUE)█ $(YELLOW)Compiling$(RESET) $<:\r\t\t\t\t\t\t\t$(GREEN){DONE}$(BLUE) █$(RESET)"
 	@$(CC) $(FLAGS) -I $(HEADERS_FOLDER) -o $@ -c $<
@@ -78,45 +80,11 @@ re: fclean all
 
 # Print Credit
 credit:
-	@echo "▀██▀▀█▄  ▀██       ██  ▀██                                  ▀██"
-	@echo " ██   ██  ██ ▄▄   ▄▄▄   ██    ▄▄▄    ▄▄▄▄    ▄▄▄   ▄▄▄ ▄▄▄   ██ ▄▄     ▄▄▄▄  ▄▄▄ ▄▄   ▄▄▄▄"
-	@echo " ██▄▄▄█▀  ██▀ ██   ██   ██  ▄█  ▀█▄ ██▄ ▀  ▄█  ▀█▄  ██▀  ██  ██▀ ██  ▄█▄▄▄██  ██▀ ▀▀ ██▄ ▀"
-	@echo " ██       ██  ██   ██   ██  ██   ██ ▄ ▀█▄▄ ██   ██  ██    █  ██  ██  ██       ██     ▄ ▀█▄▄"
-	@echo "▄██▄     ▄██▄ ██▄ ▄██▄ ▄██▄  ▀█▄▄█▀ █▀▄▄█▀  ▀█▄▄█▀  ██▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀ ▄██▄    █▀▄▄█▀"
-	@echo "                                                    ██"
-	@echo "         Made with love by : \033[1;91mmbari\033[m                 ▀▀▀▀"
-
-
-
-
-# NAME			= phonebook
-
-# SRCS_FOLDER			= srcs
-# OBJS_FOLDER			= objects
-
-# OBJS 				= $(SRCS:.cpp=.o)
-
-# SRCS_FILES = phonebook.cpp \
-# contact.cpp
-
-# OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.c=.o))
-
-# CPP				= clang++
-# RM				= rm -f
-# CPPFLAGS		= -Wall -Wextra -Werror -I.
-
-
-# all: $(NAME)
-
-# $(NAME):$(OBJS)
-# 		$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
-
-# clean:
-# 		$(RM) $(OBJS)
-
-# fclean:	clean
-# 		$(RM) $(NAME)
-
-# re:		fclean $(NAME)
-
-# .PHONY:all clean fclean re test
+	@echo "░▒█▀▄▀█░█░░█░░░█▀▀▄░█░░░█░█▀▀░█▀▀░▄▀▀▄░█▀▄▀█░█▀▀░░"
+	@echo "░▒█▒█▒█░█▄▄█░░▒█▄▄█░▀▄█▄▀░█▀▀░▀▀▄░█░░█░█░▀░█░█▀▀░░"
+	@echo "░▒█░░▒█░▄▄▄▀░░▒█░▒█░░▀░▀░░▀▀▀░▀▀▀░░▀▀░░▀░░▒▀░▀▀▀░░"
+	@echo "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"
+	@echo "░▒▒▒█▀▀█░█░░░░▄▀▀▄░█▀▀▄░█▀▀░▒█▀▀▄░▄▀▀▄░▄▀▀▄░█░▄░░░"
+	@echo "░▒▒▒█▄▄█░█▀▀█░█░░█░█░▒█░█▀▀░▒█▀▀▄░█░░█░█░░█░█▀▄░░░"
+	@echo "░▒▒▒█░░░░▀░░▀░░▀▀░░▀░░▀░▀▀▀░▒█▄▄█░░▀▀░░░▀▀░░▀░▀░░░"
+	@echo "         Made with love by : \033[1;91mmbari\033[m"
