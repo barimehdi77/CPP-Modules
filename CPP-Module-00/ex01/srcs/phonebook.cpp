@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:57 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/10 04:33:24 by mbari            ###   ########.fr       */
+/*   Updated: 2021/08/10 05:41:34 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	phonebook::ft_add()
 	std::cout << PURPLE << "Darkest Secret: " << RESET;
 	getline(std::cin, darkestsecret);
 	tmp.set_darkest_secret(darkestsecret);
-	contacts[current % 8] = tmp;
-	current++;
-	if (current <= 8)
-		index = current;
+	this->contacts[current % 8] = tmp;
+	this->current++;
+	if (this->current <= 8)
+		this->index = this->current;
 	std::cout << GREEN << "CONTACT ADDED SUCCESSFULY" << std::endl;
 }
 
@@ -61,7 +61,7 @@ string	resize(string content)
 void	phonebook::ft_display_contacts()
 {
 	std::cout << YELLOW << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|\n";
-	for (int i = 0; i < index; i++)
+	for (int i = 0; i < this->index; i++)
 	{
 		std::cout
 		<< "|" << std::setw(10) << i 
@@ -84,11 +84,11 @@ void	phonebook::ft_search()
 	{
 		if (index < this->index)
 		{
-			std::cout << "First Name: " << contacts[index].get_first_name() << std::endl;
-			std::cout << "Last Name: " << contacts[index].get_last_name() << std::endl;
-			std::cout << "NickeName: " << contacts[index].get_nicke_name() << std::endl;
-			std::cout << "Phone Number: " << contacts[index].get_phone_number() << std::endl;
-			std::cout << "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
+			std::cout << "First Name: " << this->contacts[index].get_first_name() << std::endl;
+			std::cout << "Last Name: " << this->contacts[index].get_last_name() << std::endl;
+			std::cout << "NickeName: " << this->contacts[index].get_nicke_name() << std::endl;
+			std::cout << "Phone Number: " << this->contacts[index].get_phone_number() << std::endl;
+			std::cout << "Darkest Secret: " << this->contacts[index].get_darkest_secret() << std::endl;
 		}
 		else 
 			std::cout << RED << "INDEX INVALID !\n" << RESET;
