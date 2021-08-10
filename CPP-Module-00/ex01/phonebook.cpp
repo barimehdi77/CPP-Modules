@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:57 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/09 22:09:59 by mbari            ###   ########.fr       */
+/*   Updated: 2021/08/10 04:33:24 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,26 @@ void    ft_display()
 
 void	phonebook::ft_add()
 {
+	contact tmp;
 	std::cout << PURPLE << "First Name: " << RESET;
 	getline(std::cin, firstname);
-	contacts[current].set_first_name(firstname);
+	tmp.set_first_name(firstname);
 	std::cout << PURPLE << "Last Name: " << RESET;
 	getline(std::cin, lastname);
-	contacts[current].set_last_name(lastname);
+	tmp.set_last_name(lastname);
 	std::cout << PURPLE << "Nickename: " << RESET;
 	getline(std::cin, nickename);
-	contacts[current].set_nicke_name(nickename);
+	tmp.set_nicke_name(nickename);
 	std::cout << PURPLE << "Phone number: " << RESET;
 	getline(std::cin, phonenumber);
-	contacts[current].set_phone_number(phonenumber);
+	tmp.set_phone_number(phonenumber);
 	std::cout << PURPLE << "Darkest Secret: " << RESET;
 	getline(std::cin, darkestsecret);
-	contacts[current].set_darkest_secret(darkestsecret);
+	tmp.set_darkest_secret(darkestsecret);
+	contacts[current % 8] = tmp;
 	current++;
-	index++;
+	if (current <= 8)
+		index = current;
 	std::cout << GREEN << "CONTACT ADDED SUCCESSFULY" << std::endl;
 }
 
@@ -71,7 +74,27 @@ void	phonebook::ft_display_contacts()
 
 void	phonebook::ft_search()
 {
+	int index;
 	ft_display_contacts();
+	std::cout << BLUE << "Enter The index: " << RESET;
+	std::cin >> index;
+	if (std::cin.fail())
+		std::cout << RED << "INDEX INVALID !\n" << RESET;
+	else
+	{
+		if (index < this->index)
+		{
+			std::cout << "First Name: " << contacts[index].get_first_name() << std::endl;
+			std::cout << "Last Name: " << contacts[index].get_last_name() << std::endl;
+			std::cout << "NickeName: " << contacts[index].get_nicke_name() << std::endl;
+			std::cout << "Phone Number: " << contacts[index].get_phone_number() << std::endl;
+			std::cout << "Darkest Secret: " << contacts[index].get_darkest_secret() << std::endl;
+		}
+		else 
+			std::cout << RED << "INDEX INVALID !\n" << RESET;
+	}
+	std::cin.clear();
+	std::cin.ignore(INT_MAX, '\n');
 }
 
 int main()

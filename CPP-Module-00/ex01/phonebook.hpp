@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:07:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/09 21:52:06 by mbari            ###   ########.fr       */
+/*   Updated: 2021/08/10 04:22:22 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iomanip>
 #include "contact.hpp"
 #include "colors.h"
+#include <climits>
 
 using std::string;
 
