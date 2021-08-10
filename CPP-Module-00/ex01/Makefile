@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 04:34:45 by mbari             #+#    #+#              #
-#    Updated: 2021/08/10 05:03:24 by mbari            ###   ########.fr        #
+#    Updated: 2021/08/10 05:09:52 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ BLUE = \033[1;34m
 RESET = \033[0m
 
 
-# philosophers files variable
+# Phonebook files variable
 SRC_FILES = phonebook.cpp \
 contact.cpp
 
@@ -57,7 +57,7 @@ all: credit $(NAME)
 head:
 	@echo "$(BLUE)███████████████████████ Making PhoneBook ███████████████████████$(RESET)"
 	
-# philosophers making rules
+# Phonebook making rules
 $(NAME): head $(OBJS)
 	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@
 
