@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/08/04 16:26:02 by mbari             #+#    #+#              #
-#    Updated: 2021/08/18 18:58:53 by mbari            ###   ########.fr        #
+#    Created: 2021/08/18 18:58:26 by mbari             #+#    #+#              #
+#    Updated: 2021/08/18 18:59:22 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
+SRCS			= main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
 CPPFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= megaphone
+NAME			= BRAIN
 
 all:			$(NAME)
 
