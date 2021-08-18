@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 16:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 17:22:13 by mbari            ###   ########.fr       */
+/*   Updated: 2021/08/18 18:44:34 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class Zombie
 		void			setname(std::string _name);
 };
 
-Zombie*	newZombie( std::string name );
-void	randomChump( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
-

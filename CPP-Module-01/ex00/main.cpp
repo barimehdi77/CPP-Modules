@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 17:14:07 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 17:57:10 by mbari            ###   ########.fr       */
+/*   Updated: 2021/08/18 18:25:59 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	int nbr;
 	int i;
-	std::cout << "Print num of Zombie to Create (int) : ";
+	std::cout << "Enter number of Zombie to Create (int) : ";
 	std::cin >> nbr;
 	std::cin.ignore();
 
