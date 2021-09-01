@@ -6,14 +6,14 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 02:21:02 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/31 02:32:18 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/01 02:33:22 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef KAREN_HPP
 #define KAREN_HPP
 
-#include <fstream>
+#include <iostream>
 #include <string>
 
 class Karen
@@ -24,8 +24,6 @@ class Karen
 		void	warning( void );
 		void	error( void );
 	public:
-		Karen(/* args */);
-		~Karen();
 		void	complain( std::string level );
 };
 
