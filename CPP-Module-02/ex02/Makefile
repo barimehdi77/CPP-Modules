@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 15:50:42 by mbari             #+#    #+#              #
-#    Updated: 2021/09/16 16:42:58 by mbari            ###   ########.fr        #
+#    Updated: 2021/09/15 17:19:03 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPP				= clang++
 RM				= rm -f
 CPPFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= FixedPro
+NAME			= FixedProMax
 
 all:			$(NAME)
 
