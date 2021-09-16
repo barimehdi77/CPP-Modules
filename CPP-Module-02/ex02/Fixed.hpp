@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:13:38 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/16 16:38:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/16 16:50:57 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ class Fixed
 		int toInt( void ) const;
 };
 
-Fixed &min(Fixed &first, Fixed &second);
-Fixed &max(Fixed &first, Fixed &second);
 std::ostream &operator<<(std::ostream &op, const Fixed &a);
 
 #endif
