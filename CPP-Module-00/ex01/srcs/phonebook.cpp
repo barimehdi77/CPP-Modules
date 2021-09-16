@@ -6,11 +6,13 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:21:57 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/10 05:41:34 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/16 18:51:01 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "../headers/Phonebook.hpp"
+
+Phonebook::Phonebook(){_current = 0;_index = 0;};
 
 void    ft_display()
 {
@@ -23,32 +25,32 @@ void    ft_display()
     std::cout << RESET;
 }
 
-void	phonebook::ft_add()
+void	Phonebook::ft_add()
 {
-	contact tmp;
+	Contact tmp;
 	std::cout << PURPLE << "First Name: " << RESET;
-	getline(std::cin, firstname);
-	tmp.set_first_name(firstname);
+	getline(std::cin, _firstname);
+	tmp.set_first_name(_firstname);
 	std::cout << PURPLE << "Last Name: " << RESET;
-	getline(std::cin, lastname);
-	tmp.set_last_name(lastname);
+	getline(std::cin, _lastname);
+	tmp.set_last_name(_lastname);
 	std::cout << PURPLE << "Nickename: " << RESET;
-	getline(std::cin, nickename);
-	tmp.set_nicke_name(nickename);
+	getline(std::cin, _nickename);
+	tmp.set_nicke_name(_nickename);
 	std::cout << PURPLE << "Phone number: " << RESET;
-	getline(std::cin, phonenumber);
-	tmp.set_phone_number(phonenumber);
+	getline(std::cin, _phonenumber);
+	tmp.set_phone_number(_phonenumber);
 	std::cout << PURPLE << "Darkest Secret: " << RESET;
-	getline(std::cin, darkestsecret);
-	tmp.set_darkest_secret(darkestsecret);
-	this->contacts[current % 8] = tmp;
-	this->current++;
-	if (this->current <= 8)
-		this->index = this->current;
+	getline(std::cin, _darkestsecret);
+	tmp.set_darkest_secret(_darkestsecret);
+	this->_contacts[_current % 8] = tmp;
+	this->_current++;
+	if (this->_current <= 8)
+		this->_index = this->_current;
 	std::cout << GREEN << "CONTACT ADDED SUCCESSFULY" << std::endl;
 }
 
-string	resize(string content)
+std::string	resize(std::string content)
 {
 	if (content.length() > 10)
 	{
@@ -58,23 +60,23 @@ string	resize(string content)
 	return (content);
 }
 
-void	phonebook::ft_display_contacts()
+void	Phonebook::ft_display_contacts()
 {
 	std::cout << YELLOW << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|\n";
-	for (int i = 0; i < this->index; i++)
+	for (int i = 0; i < (int)this->_index; i++)
 	{
 		std::cout
-		<< "|" << std::setw(10) << i 
-		<< "|" << std::setw(10) << resize(contacts[i].get_first_name()) 
-		<< "|" << std::setw(10) << resize(contacts[i].get_last_name())
-		<< "|" << std::setw(10) << resize(contacts[i].get_nicke_name()) << "|"
+		<< "|" << std::setw(10) << i
+		<< "|" << std::setw(10) << resize(_contacts[i].get_first_name())
+		<< "|" << std::setw(10) << resize(_contacts[i].get_last_name())
+		<< "|" << std::setw(10) << resize(_contacts[i].get_nicke_name()) << "|"
 		<< std::endl;
-	}	
+	}
 }
 
-void	phonebook::ft_search()
+void	Phonebook::ft_search()
 {
-	int index;
+	unsigned int index;
 	ft_display_contacts();
 	std::cout << BLUE << "Enter The index: " << RESET;
 	std::cin >> index;
@@ -82,15 +84,15 @@ void	phonebook::ft_search()
 		std::cout << RED << "INDEX INVALID !\n" << RESET;
 	else
 	{
-		if (index < this->index)
+		if (index < this->_index)
 		{
-			std::cout << "First Name: " << this->contacts[index].get_first_name() << std::endl;
-			std::cout << "Last Name: " << this->contacts[index].get_last_name() << std::endl;
-			std::cout << "NickeName: " << this->contacts[index].get_nicke_name() << std::endl;
-			std::cout << "Phone Number: " << this->contacts[index].get_phone_number() << std::endl;
-			std::cout << "Darkest Secret: " << this->contacts[index].get_darkest_secret() << std::endl;
+			std::cout << "First Name: " << this->_contacts[index].get_first_name() << std::endl;
+			std::cout << "Last Name: " << this->_contacts[index].get_last_name() << std::endl;
+			std::cout << "NickeName: " << this->_contacts[index].get_nicke_name() << std::endl;
+			std::cout << "Phone Number: " << this->_contacts[index].get_phone_number() << std::endl;
+			std::cout << "Darkest Secret: " << this->_contacts[index].get_darkest_secret() << std::endl;
 		}
-		else 
+		else
 			std::cout << RED << "INDEX INVALID !\n" << RESET;
 	}
 	std::cin.clear();
@@ -99,8 +101,8 @@ void	phonebook::ft_search()
 
 int main()
 {
-    phonebook phonebook;
-    string command;
+    Phonebook Phonebook;
+    std::string command;
 
     ft_display();
     while (1337)
@@ -108,9 +110,9 @@ int main()
         std::cout << BLUE "> " << RESET;
         getline(std::cin, command);
         if (command == "ADD")
-            phonebook.ft_add();
+            Phonebook.ft_add();
         else if (command == "SEARCH")
-			phonebook.ft_search();
+			Phonebook.ft_search();
         else if (command == "EXIT")
 		{
 			std::cout << YELLOW << "GOOD BYE" << std::endl;

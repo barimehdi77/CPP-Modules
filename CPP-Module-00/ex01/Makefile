@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/10 04:34:45 by mbari             #+#    #+#              #
-#    Updated: 2021/08/10 05:09:52 by mbari            ###   ########.fr        #
+#    Updated: 2021/09/16 18:48:43 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ RESET = \033[0m
 
 
 # Phonebook files variable
-SRC_FILES = phonebook.cpp \
-contact.cpp
+SRC_FILES = Phonebook.cpp \
+Contact.cpp
 
 
 # Define objects for all sources
@@ -56,7 +56,7 @@ all: credit $(NAME)
 
 head:
 	@echo "$(BLUE)███████████████████████ Making PhoneBook ███████████████████████$(RESET)"
-	
+
 # Phonebook making rules
 $(NAME): head $(OBJS)
 	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@

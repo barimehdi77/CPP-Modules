@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 21:07:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/10 04:22:22 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/16 18:52:06 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,27 @@
 
 #include <string>
 #include <iomanip>
-#include "contact.hpp"
+#include "Contact.hpp"
 #include "colors.h"
 #include <climits>
 
-using std::string;
-
-class phonebook
+class Phonebook
 {
     private:
-        contact contacts[8];
-        int     current;
-        int     index;
-        string  firstname;
-        string  lastname;
-        string  nickename;
-		string	darkestsecret;
-		string	phonenumber;
+        Contact _contacts[8];
+        unsigned int     _current;
+        unsigned int     _index;
+        std::string  _firstname;
+        std::string  _lastname;
+        std::string  _nickename;
+		std::string	_darkestsecret;
+		std::string	_phonenumber;
     public:
-        phonebook(){current = 0;index = 0;};
-        ~phonebook(){return;};
+        Phonebook();
+        ~Phonebook(){};
         void	ft_add();
         void	ft_search();
-		void	ft_display_contacts();   
+		void	ft_display_contacts();
 };
 
 #endif
