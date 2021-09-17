@@ -38,5 +38,4 @@ class Contact
         void  		set_darkest_secret(std::string darkestsecret);
         void        set_phone_number(std::string phonenumber);
 };
-
 #endif
