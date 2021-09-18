@@ -6,12 +6,13 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/09/18 12:41:08 by mbari            ###   ########.fr        #
+#    Updated: 2021/09/18 14:53:04 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			= main.cpp \
 ClapTrap.cpp \
+ScavTrap.cpp \
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -19,12 +20,12 @@ CPP				= clang++
 RM				= rm -f
 CPPFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= ClapTrap
+NAME			= ClapTrapPro
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) ClapTrap.hpp
-				$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS) -I ClapTrap.hpp
+$(NAME):		$(OBJS) ClapTrap.hpp ScavTrap.hpp
+				$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS) -I ClapTrap.hpp -I ScavTrap.hpp
 
 clean:
 				$(RM) $(OBJS)

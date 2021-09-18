@@ -6,23 +6,35 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 16:55:47 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 12:49:04 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 15:17:34 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 
 int main( void )
 {
 	ClapTrap mehdi("mehdi");
-	ClapTrap ayoub("ayoub");
+	ScavTrap ayoub("ayoub");
 
-	ayoub.beRepaired(10);
+	ayoub.guardgate();
 	mehdi.attack("ayoub");
-	ayoub.takeDamage(0);
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
+	mehdi.attack("ayoub");
+	ayoub.takeDamage(20);
 	mehdi.beRepaired(10);
 	ayoub.attack("mehdi");
-	mehdi.takeDamage(0);
+	mehdi.takeDamage(20);
 	return (0);
 }
