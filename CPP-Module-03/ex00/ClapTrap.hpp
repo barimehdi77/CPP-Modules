@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:45:10 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 14:39:35 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 16:09:30 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
 {
 	private:
 		std::string	_Name;
-		int			_Hitpoints;
+		int			_HitPoints;
 		int			_EnergyPoints;
 		int			_AttackDamage;
 	public:

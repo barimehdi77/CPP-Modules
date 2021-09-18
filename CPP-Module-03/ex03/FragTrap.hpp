@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:24:34 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 15:29:13 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 16:37:25 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,8 @@
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-	private:
-		std::string	_Name;
-		int			_HitPoints;
-		int			_EnergyPoints;
-		int			_AttackDamage;
 	public:
 		FragTrap();
 		FragTrap( std::string Name );

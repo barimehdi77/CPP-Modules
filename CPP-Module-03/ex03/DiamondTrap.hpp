@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 16:55:47 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:11:06 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/18 16:19:19 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/18 16:34:21 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-
-int main( void )
+class DiamondTrap: public ScavTrap, public FragTrap
 {
-	ClapTrap clapper("clapper");
-	ScavTrap scaver("scaver");
+	private:
+		std::string _Name;
+	public:
+		DiamondTrap();
+		DiamondTrap( std::string Name );
+		DiamondTrap( const DiamondTrap &src );
+		~DiamondTrap();
+		DiamondTrap & operator = ( const DiamondTrap &rhs );
+		void whoAmI();
+};
 
-	scaver.guardgate();
-	clapper.attack("scaver");
-	scaver.takeDamage(20);
-	scaver.attack("clapper");
-	clapper.takeDamage(20);
-	return (0);
-}
+
+#endif

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 16:55:47 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:11:06 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/18 15:52:09 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/18 16:40:12 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
-
-int main( void )
+DiamondTrap::DiamondTrap(): ClapTrap( "Nobody_clap_name" )
 {
-	ClapTrap clapper("clapper");
-	ScavTrap scaver("scaver");
-
-	scaver.guardgate();
-	clapper.attack("scaver");
-	scaver.takeDamage(20);
-	scaver.attack("clapper");
-	clapper.takeDamage(20);
-	return (0);
+	this->_Name = "Nobody";
 }

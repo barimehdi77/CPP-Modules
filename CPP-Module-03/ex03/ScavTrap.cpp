@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 13:20:05 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 15:05:05 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 16:35:07 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_Name = "Nobody";
-	this->_HitPoints = 100;
 	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
 	std::cout << "ScavTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
 ScavTrap::ScavTrap( std::string Name ) : ClapTrap( Name )
 {
 	this->_Name = Name;
-	this->_HitPoints = 100;
 	this->_EnergyPoints = 50;
-	this->_AttackDamage = 20;
 	std::cout << "ScavTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
