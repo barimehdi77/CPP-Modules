@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 16:55:47 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 15:45:27 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/18 15:24:34 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/18 15:29:13 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main( void )
+class FragTrap : public ClapTrap
 {
-	ClapTrap clapper("clapper");
-	ScavTrap scaver("scaver");
-	FragTrap fragger("fragger");
+	private:
+		std::string	_Name;
+		int			_HitPoints;
+		int			_EnergyPoints;
+		int			_AttackDamage;
+	public:
+		FragTrap();
+		FragTrap( std::string Name );
+		FragTrap( const FragTrap &src );
+		~FragTrap();
+		FragTrap & operator = ( const FragTrap &rhs );
+		void	highFivesGuys( void );
+};
 
-	clapper.attack("scaver");
-	scaver.takeDamage(30);
-	fragger.beRepaired(10);
-	scaver.guardgate();
-	clapper.attack("fragger");
-	fragger.takeDamage(0);
-	fragger.highFivesGuys();
-	return (0);
-}
+
+
+#endif
