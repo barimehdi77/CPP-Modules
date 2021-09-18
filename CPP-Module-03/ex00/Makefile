@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/09/18 12:41:08 by mbari            ###   ########.fr        #
+#    Updated: 2021/09/18 15:22:14 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPP				= clang++
 RM				= rm -f
 CPPFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= ClapTrap
+NAME			= ClapTrapMini
 
 all:			$(NAME)
 
