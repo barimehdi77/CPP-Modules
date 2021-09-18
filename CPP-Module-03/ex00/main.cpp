@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 16:55:47 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/17 19:32:13 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 12:49:04 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main( void )
 
 	ayoub.beRepaired(10);
 	mehdi.attack("ayoub");
-	ayoub.takeDamage(10);
+	ayoub.takeDamage(0);
 	mehdi.beRepaired(10);
 	ayoub.attack("mehdi");
-	mehdi.takeDamage(10);
+	mehdi.takeDamage(0);
 	return (0);
 }

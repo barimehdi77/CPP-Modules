@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:44:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/17 19:36:17 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/18 12:50:42 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,17 @@ ClapTrap::ClapTrap( std::string Name )
 	this->_Hitpoint = 10;
 	this->_EnergyPoints = 10;
 	this->_AttackDamage = 0;
-	std::cout << "ClapTrap: " << this->_Name << " joinig The fight" << std::endl;
+	std::cout << "ClapTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &src ) { *this = src; }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap: " << this->_Name << " is out" << std::endl;
+	if (this->_Hitpoint == 0)
+		std::cout << "ClapTrap: < " << this->_Name << " > is Dead!" << std::endl;
+	else
+		std::cout << "ClapTrap: < " << this->_Name << " > is leaving the fight!" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=( const ClapTrap &rhs )
@@ -50,37 +53,37 @@ ClapTrap & ClapTrap::operator=( const ClapTrap &rhs )
 
 void	ClapTrap::attack( std::string const & target )
 {
-	std::cout << "ClapTrap: " << this->_Name << " attack " << target
+	std::cout << "ClapTrap: < " << this->_Name << " > attack " << target
 		<< ", causing " << this->_AttackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
 	int newHitPoint = this->_Hitpoint - amount;
-	if (newHitPoint >= 0)
+	if (newHitPoint <= 0)
 		newHitPoint = 0;
 	if (this->_Hitpoint != 0)
 	{
-		std::cout << "ClapTrap: " << this->_Name << " Take damage of " << amount << std::endl;
-		std::cout << "ClapTrap: " << this->_Name << " HitPoint get down from "
+		std::cout << "ClapTrap: < " << this->_Name << " > Take damage of " << amount << std::endl;
+		std::cout << "ClapTrap: < " << this->_Name << " > HitPoint get down from "
 			<< this->_Hitpoint << " to " << newHitPoint << std::endl;
 		this->_Hitpoint = newHitPoint;
 		if (newHitPoint == 0)
-			std::cout << "ClapTrap: " << this->_Name << " is Dead!" << std::endl;
+			std::cout << "ClapTrap: < " << this->_Name << " > is Dead!" << std::endl;
 	}
 	else
-		std::cout << "ClapTrap: " << this->_Name << " is Dead!" << std::endl;
+		std::cout << "ClapTrap: < " << this->_Name << " > is Dead!" << std::endl;
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->_Hitpoint == 0)
-		std::cout << "ClapTrap: " << this->_Name << " is Dead!" << std::endl;
+		std::cout << "ClapTrap: < " << this->_Name << " > is Dead!" << std::endl;
 	else
 	{
 		int newHitPoint = this->_Hitpoint + amount;
-		std::cout << "ClapTrap: " << this->_Name << " adding " << amount << " to his HitPoint" << std::endl;
-		std::cout << "ClapTrap: " << this->_Name << " HitPoint get down from "
+		std::cout << "ClapTrap: < " << this->_Name << " > adding " << amount << " to his HitPoint" << std::endl;
+		std::cout << "ClapTrap: < " << this->_Name << " > HitPoint get down from "
 			<< this->_Hitpoint << " to " << newHitPoint << std::endl;
 	}
 }
