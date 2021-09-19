@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 15:30:56 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:34:44 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/19 13:56:47 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	this->_Name = "Nobody";
 	this->_HitPoints = 100;
 	this->_AttackDamage = 30;
 	std::cout << "FragTrap: < " << this->_Name << " > joinig The fight" << std::endl;
@@ -22,7 +21,6 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap( std::string Name ) : ClapTrap( Name )
 {
-	this->_Name = Name;
 	this->_HitPoints = 100;
 	this->_AttackDamage = 30;
 	std::cout << "FragTrap: < " << this->_Name << " > joinig The fight" << std::endl;

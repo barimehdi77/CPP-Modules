@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 16:19:19 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:34:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/19 16:16:39 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap( const DiamondTrap &src );
 		~DiamondTrap();
 		DiamondTrap & operator = ( const DiamondTrap &rhs );
-		void whoAmI();
+		void	attack( std::string const & target );
+		void	whoAmI();
 };
 
 

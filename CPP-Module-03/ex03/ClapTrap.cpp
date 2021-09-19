@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:44:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:30:11 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/19 13:53:40 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 ClapTrap::ClapTrap()
 {
+	this->_Name = "Nobody_clap_name";
 	std::cout << "ClapTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string Name )
 {
+	this->_Name = Name;
 	std::cout << "ClapTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
