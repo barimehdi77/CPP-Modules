@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 18:06:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:24:27 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/19 18:34:01 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/19 18:35:00 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog()
+WrongCat::WrongCat() { this->_type = "WrongCat"; }
+
+WrongCat::WrongCat( const WrongCat &src ) { *this = src; }
+
+WrongCat::~WrongCat()
 {
-	this->_type = "Dog";
+	std::cout << "WrongCat Destructor" << std::endl;
 }
 
-Dog::Dog( const Dog &src ) { *this = src; }
-
-Dog::~Dog()
+WrongCat & WrongCat::operator=( const WrongCat &rhs )
 {
-	std::cout << "Dog Destructor" << std::endl;
-}
-
-Dog & Dog::operator=( const Dog &rhs)
-{
-	if (this == &rhs )
+	if (this == &rhs)
 		return (*this);
 	this->_type = rhs._type;
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "looks Like a Dog sound!" << std::endl;
+	std::cout << "looks like a Wrong Cat sound!" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:16:11 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:20:06 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/19 18:24:19 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat & Cat::operator=( const Cat &rhs )
 	return (*this);
 }
 
-void	Cat::makeSound()
+void	Cat::makeSound() const
 {
 	std::cout << "looks like a Cat sound!" << std::endl;
 }

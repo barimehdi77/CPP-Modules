@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:14:24 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:16:05 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/19 18:27:52 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat: public Animal
 		Cat( const Cat &src );
 		~Cat();
 		Cat & operator=( const Cat &rhs );
-		void	makeSound();
+		virtual void	makeSound() const;
 };
 
 #endif
