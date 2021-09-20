@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:33:34 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:42:05 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/20 12:30:09 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongCat: public WrongAnimal
 		WrongCat( const WrongCat &src );
 		~WrongCat();
 		WrongCat & operator=( const WrongCat &rhs );
-		virtual void	makeSound() const;
+		void	makeSound() const;
 };
 
 #endif

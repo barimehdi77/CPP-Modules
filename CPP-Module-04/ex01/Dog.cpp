@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 17:56:04 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 16:39:06 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/19 18:06:55 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/20 17:13:23 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal()
+Dog::Dog()
 {
-	this->_type = "Animal";
+	this->_type = "Dog";
+	std::cout << "Dog constructor called" << std::endl;
+	this->_brain = new Brain();
 }
 
-Animal::Animal( const Animal &src ) { *this = src; }
+Dog::Dog( const Dog &src ) { *this = src; }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	std::cout << "Animal destructor" << std::endl;
+	delete this->_brain;
+	std::cout << "Dog Destructor called" << std::endl;
 }
 
-Animal & Animal::operator=( const Animal &rhs )
+Dog & Dog::operator=( const Dog &rhs)
 {
-	if (this == &rhs)
+	if (this == &rhs )
 		return (*this);
 	this->_type = rhs._type;
+	this->_brain = new Brain();
+	this->_brain = rhs._brain;
 	return (*this);
 }
 
-std::string	Animal::getType() const { return (this->_type); }
-
-void		Animal::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "looks like an Animal sounds!" << std::endl;
+	std::cout << "looks Like a Dog sound!" << std::endl;
 }

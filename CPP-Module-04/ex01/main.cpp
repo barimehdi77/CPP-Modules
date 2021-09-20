@@ -6,27 +6,28 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 12:31:07 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/20 16:56:52 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
+	int arr_size = 4;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const WrongAnimal* Wrongmeta = new WrongCat();
-	// const WrongCat* Wrongi = new WrongCat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	// std::cout << Wrongi->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	Wrongmeta->makeSound();
-	// Wrongi->makeSound();
+
+	Animal* animals[arr_size];
+
+	for (int k = 0; k < (arr_size / 2); k++)
+		animals[k] = new Dog();
+	for (int k = (arr_size / 2); k < arr_size; k++)
+		animals[k] = new Cat();
+	for ( int k = 0; k < arr_size; k++)
+		delete animals[k];
+
+	delete j;	//should not create a leak
+	delete i;
 }

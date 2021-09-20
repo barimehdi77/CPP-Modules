@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 18:37:16 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 12:30:04 by mbari            ###   ########.fr       */
+/*   Created: 2021/09/20 12:41:04 by mbari             #+#    #+#             */
+/*   Updated: 2021/09/20 17:12:59 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
 
-class WrongAnimal
+Brain::Brain()
 {
-	protected:
-		std::string _type;
-	public:
-		WrongAnimal();
-		WrongAnimal( const WrongAnimal & src );
-		~WrongAnimal();
-		WrongAnimal & operator = ( const WrongAnimal & rhs );
-		std::string	getType() const;
-		void		makeSound() const;
-};
+	std::cout << "Brain constructor called" << std::endl;
+}
 
-#endif
+Brain::Brain( const Brain &src ) { *this = src; }
+
+Brain::~Brain()
+{
+	std::cout << "Brain Destructor called" << std::endl;
+}
+
+Brain & Brain::operator=( const Brain &rhs )
+{
+	if (this == &rhs)
+		return (*this);
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = rhs._ideas[i];
+	return (*this);
+}
