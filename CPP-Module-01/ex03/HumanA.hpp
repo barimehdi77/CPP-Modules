@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 19:31:22 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 20:47:33 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/23 10:27:03 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class HumanA
 {
 	private:
-		string	name;
-		Weapon	&weapon;
+		string	_Name;
+		Weapon	&_Weapon;
 	public:
-		HumanA( string _name, Weapon &_weapon );
+		HumanA( string Name, Weapon &Weapon );
 		~HumanA();
 		void	attack();
 		string	getName();
-		void	setName( string _name );
+		void	setName( string Name );
 };
 
 #endif

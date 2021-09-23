@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 18:24:49 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 18:45:27 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/23 10:18:21 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int main()
 	std::cout << "Name of your Zombies: ";
 	getline(std::cin, name);
 	zom = zombieHorde(nbr, name);
-	delete[] zom;
+	delete [] zom;
 	return (0);
 }

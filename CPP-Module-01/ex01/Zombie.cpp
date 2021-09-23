@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 16:39:17 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 17:22:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/23 10:19:34 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 Zombie::Zombie()
 {
-	std::cout << "Constructor" << std::endl;
+	std::cout << "Constructor Called" << std::endl;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << "Destructor" << std::endl;
+	std::cout << "The Zombie " << this->_Name << " Has Destructor" << std::endl;
 }
 
 std::string	Zombie::getname()
 {
-	return (this->name);
+	return (this->_Name);
 }
 
-void	Zombie::setname(std::string _name)
+void	Zombie::setname(std::string Name)
 {
-	this->name = _name;
+	this->_Name = Name;
 }
 
 void	Zombie::announce( void )
 {
-	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_Name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

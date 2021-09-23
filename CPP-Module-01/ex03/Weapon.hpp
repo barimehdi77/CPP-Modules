@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 19:19:12 by mbari             #+#    #+#             */
-/*   Updated: 2021/08/18 20:18:13 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/23 10:25:28 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ using std::string;
 class Weapon
 {
 	private:
-		string type;
+		string _Type;
 	public:
-		Weapon( string _type );
+		Weapon( string Type );
 		~Weapon();
 		string const	&getType();
-		void			setType( string _type);
+		void			setType( string Type );
 };
 
 #endif
