@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 15:13:38 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/15 16:39:12 by mbari            ###   ########.fr       */
+/*   Updated: 2021/09/27 10:17:50 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 	private:
-		int FixedPointValue;
-		static const int bits = 8;
+		int _FixedPointValue;
+		static const int _bits = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &src);
