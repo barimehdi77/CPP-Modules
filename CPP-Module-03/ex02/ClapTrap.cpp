@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:44:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:30:19 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/02 10:11:43 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,19 @@
 
 ClapTrap::ClapTrap()
 {
+	this->_Name = "Nobody";
+	this->_HitPoints = 10;
+	this->_EnergyPoints = 10;
+	this->_AttackDamage = 0;
 	std::cout << "ClapTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string Name )
 {
+	this->_Name = Name;
+	this->_HitPoints = 10;
+	this->_EnergyPoints = 10;
+	this->_AttackDamage = 0;
 	std::cout << "ClapTrap: < " << this->_Name << " > joinig The fight" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:45:10 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/18 16:09:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/02 10:10:03 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap
 		int			_AttackDamage;
 	public:
 		ClapTrap();
-		ClapTrap( std::string );
+		ClapTrap( std::string Name );
 		ClapTrap( const ClapTrap &src );
 		~ClapTrap();
 		ClapTrap & operator = ( const ClapTrap &rhs );
