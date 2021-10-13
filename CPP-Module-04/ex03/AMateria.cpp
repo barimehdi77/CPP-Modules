@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:13:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/21 18:31:38 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/13 15:01:42 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,20 @@ AMateria::~AMateria()
 	std::cout << "AMateria Destructor Called" << std::endl;
 }
 
-AMateria & AMateria::operator=( const AMateria & rhs ) { this->_type = rhs._type; }
+AMateria & AMateria::operator=( const AMateria & rhs )
+{
+	if (this == &rhs)
+		return (*this);
+	this->_type = rhs._type;
+	return (*this);
+}
 
 std::string const & AMateria::getType() const { return (this->_type); }
 
-// void	AMateria::use( ICharacter& target )
-// {
-// 	if (this->_type == "ICE")
-// 		std::cout << "* shoots an ice bolt at " << target.getName << std::endl;
-// 	if (this->_type == "CURE")
-
-// }
+void	AMateria::use( ICharacter& target )
+{
+	if (this->_type == "ice")
+		std::cout <<  "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	else
+		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
