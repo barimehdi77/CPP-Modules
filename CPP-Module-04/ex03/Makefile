@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/13 14:56:34 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/16 18:34:57 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ NAME			= PolyProMax
 all:			$(NAME)
 
 $(NAME):		$(OBJS) AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp
-				$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS) -I AMateria.hpp -I Character.hpp -I Cure.hpp -I Ice.hpp
+				$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS) -I AMateria.hpp -I Character.hpp -I Cure.hpp -I Ice.hpp -I ICharacter.hpp
 
 clean:
 				$(RM) $(OBJS)

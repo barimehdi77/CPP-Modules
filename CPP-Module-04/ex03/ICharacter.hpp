@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:25:37 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/13 13:43:50 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/16 18:34:04 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "AMateria.hpp"
 
-#include<string>
 class ICharacter
 {
 	public:
