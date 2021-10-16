@@ -6,11 +6,12 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:13:55 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/13 15:01:42 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/16 18:59:02 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria()
 {

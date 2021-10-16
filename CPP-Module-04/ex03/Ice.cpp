@@ -6,11 +6,13 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:00:16 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/13 13:15:30 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/16 19:03:55 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
+
 
 Ice::Ice(): AMateria("ice")
 {

@@ -6,14 +6,15 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:33:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/16 18:20:17 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/16 19:03:32 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include "ICharacter.hpp"
+// #include "ICharacter.hpp"
+class ICharacter;
 
 #include <iostream>
 #include <string>
@@ -26,7 +27,7 @@ class AMateria
 		AMateria();
 		AMateria( std::string const & type );
 		AMateria( const AMateria &src );
-		~AMateria();
+		virtual ~AMateria();
 		AMateria & operator = ( const AMateria &rhs );
 		std::string const & getType() const;
 
