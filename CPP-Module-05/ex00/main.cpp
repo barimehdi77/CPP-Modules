@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/16 19:11:37 by mbari            ###   ########.fr       */
+/*   Created: 2021/10/17 15:02:14 by mbari             #+#    #+#             */
+/*   Updated: 2021/10/17 16:53:27 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	Character test("test");
-	Ice ice;
-	Cure cure;
+	try
+	{
+		Bureaucrat bari("Bari", 2);
+		Bureaucrat test("test", 150);
+		Bureaucrat none("none", 1);
 
-	test.equip(&ice);
+		none.GardeIncrement();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
