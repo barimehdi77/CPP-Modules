@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:41:44 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/13 13:26:32 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/18 17:31:25 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Character::Character()
 	this->_Inventory = new AMateria*[4];
 	for (size_t i = 0; i < 4; i++)
 		this->_Inventory[i] = NULL;
-	std::cout << "Character Constructor Called" << std::endl;
+	std::cout << this->_Name << " Constructor Called" << std::endl;
 }
 
 Character::Character( std::string Name )
@@ -27,32 +27,34 @@ Character::Character( std::string Name )
 	this->_Inventory = new AMateria*[4];
 	for (size_t i = 0; i < 4; i++)
 		this->_Inventory[i] = NULL;
-	std::cout << "Character Constructor Called" << std::endl;
+	std::cout << this->_Name << " Constructor Called" << std::endl;
 }
 
 Character::Character( const Character &src ) { *this = src; }
 
 Character::~Character()
 {
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (this->_Inventory[i])
-			delete this->_Inventory[i];
-	}
+	// for (size_t i = 0; i < 4; i++)
+	// {
+	// 	if (this->_Inventory[i])
+	// 		delete this->_Inventory[i];
+	// }
 	delete [] this->_Inventory;
-	std::cout << "Character Destructor Called" << std::endl;
+	std::cout << this->_Name << " Destructor Called" << std::endl;
+
 }
 
 Character & Character::operator=( const Character &rhs )
 {
 	if (this == &rhs)
 		return (*this);
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (this->_Inventory[i])
-			delete this->_Inventory[i];
-	}
-	delete [] this->_Inventory;
+	// for (size_t i = 0; i < 4; i++)
+	// {
+	// 	if (this->_Inventory[i])
+	// 		delete this->_Inventory[i];
+	// }
+	if (this->_Inventory == NULL)
+		delete [] this->_Inventory;
 	this->_Inventory = new AMateria*[4];
 	for (size_t i = 0; i < 4; i++)
 	{
@@ -81,6 +83,12 @@ void	Character::unequip( int idx ) { this->_Inventory[idx] = NULL; }
 
 void	Character::use( int idx, ICharacter& target )
 {
+	if (this->_Inventory[idx] == NULL)
+	{
+		std::cout << this->_Name << " has no materia in index "
+		<< idx << std::endl;
+		return;
+	}
 	std::cout << this->_Name << ": ";
 	this->_Inventory[idx]->use(target);
 }

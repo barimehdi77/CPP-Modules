@@ -6,14 +6,13 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 17:33:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/16 19:03:32 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/18 17:10:07 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-// #include "ICharacter.hpp"
 class ICharacter;
 
 #include <iostream>

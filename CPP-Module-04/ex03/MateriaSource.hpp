@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/18 17:32:53 by mbari            ###   ########.fr       */
+/*   Created: 2021/10/18 17:36:44 by mbari             #+#    #+#             */
+/*   Updated: 2021/10/18 17:38:20 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-int main()
+#include "IMateriaSource.hpp"
+
+class MateriaSource: public IMateriaSource
 {
-	Character test("test");
-	Character someone("someone");
-	Ice ice;
+	public:
+		MateriaSource();
+		~MateriaSource();
+		void learnMateria( AMateria*);
+		AMateria* createMateria( std::string const & type );
+};
 
-	test.equip(&ice);
-	test.use(0, someone);
-}
+#endif
