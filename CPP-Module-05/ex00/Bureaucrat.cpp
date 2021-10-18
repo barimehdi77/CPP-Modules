@@ -6,26 +6,49 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:48 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/17 16:19:32 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/18 17:03:23 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat()
+{
+	throw Bureaucrat::GradeTooLowException();
+}
+
 Bureaucrat::Bureaucrat( const std::string Name, int Grade )
 {
 	this->_Name = Name;
 	if (Grade < 1)
-		throw "Bureaucrat::GradeTooHighException";
+		throw Bureaucrat::GradeTooHighException();
 	else if (Grade > 150)
-		throw "Bureaucrat::GradeTooLowException";
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_Grade = Grade;
 }
 
-Bureaucrat::~Bureaucrat()
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) { *this = src; }
+
+Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat & Bureaucrat::operator=( const Bureaucrat & rhs )
 {
-	std::cout << "Bureaucrat Distructor called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->_Name = rhs._Name;
+	this->_Grade = rhs._Grade;
+	return (*this);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("BureaucratException: Grade too High");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("BureaucratException: Grade too Low");
 }
 
 std::string	Bureaucrat::getName() { return (this->_Name); }
@@ -35,13 +58,19 @@ unsigned int	Bureaucrat::getGrage() { return (this->_Grade); }
 void	Bureaucrat::GradeDecrement()
 {
 	if (this->_Grade == 150)
-		throw "Bureaucrat::GradeTooLowException";
+		throw Bureaucrat::GradeTooLowException();
 	this->_Grade++;
 }
 
 void	Bureaucrat::GardeIncrement()
 {
 	if (this->_Grade == 1)
-		throw "Bureaucrat::GradeTooHighException";
+		throw Bureaucrat::GradeTooHighException();
 	this->_Grade--;
+}
+
+std::ostream& operator<<( std::ostream& os, Bureaucrat& brc )
+{
+	os << brc.getName() << ", bureaucrat grade " << brc.getGrage() << std::endl;
+	return (os);
 }
