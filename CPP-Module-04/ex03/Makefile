@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/16 18:34:57 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/19 17:06:38 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,31 @@ AMateria.cpp \
 Character.cpp \
 Cure.cpp \
 Ice.cpp \
+MateriaSource.cpp \
 
-OBJS			= $(SRCS:.cpp=.o)
+HEADERFILES 	= IMateriaSource.hpp \
+AMateria.hpp \
+Character.hpp \
+Cure.hpp \
+Ice.hpp \
+MateriaSource.hpp \
+ICharacter.hpp \
 
-CPP				= clang++
+OBJS			= $(SRCS:%.cpp=%.o)
+
+CXX				= clang++
 RM				= rm -f
-CPPFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS		= -Wall -Wextra -Werror -I.
 
 NAME			= PolyProMax
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp
-				$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS) -I AMateria.hpp -I Character.hpp -I Cure.hpp -I Ice.hpp -I ICharacter.hpp
+$(NAME):		$(OBJS) $(HEADERFILES)
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I AMateria.hpp -I Character.hpp -I Cure.hpp -I Ice.hpp -I ICharacter.hpp -I MateriaSource.hpp -I IMateriaSource.hpp
+
+%.o: %.cpp $(HEADERFILES)
+				$(CXX) $(CXXFLAGS) &< -o $@
 
 clean:
 				$(RM) $(OBJS)
@@ -38,3 +50,6 @@ fclean:			clean
 re:				fclean $(NAME)
 
 .PHONY:			all clean fclean re
+
+
+# AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp MateriaSource.hpp IMateriaSource.hpp

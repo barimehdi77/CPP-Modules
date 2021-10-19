@@ -6,20 +6,59 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/18 17:32:53 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/19 16:38:31 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
-#include "Ice.hpp"
+#include <iostream>
 #include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
-int main()
+int main(void)
 {
-	Character test("test");
-	Character someone("someone");
-	Ice ice;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	test.equip(&ice);
-	test.use(0, someone);
+	ICharacter* me = new Character("me");
+
+	AMateria* tmp = nullptr;
+	AMateria* first = nullptr;
+	tmp = src->createMateria("fire");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	first = tmp;
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	delete tmp;
+	me->equip(nullptr);
+
+	ICharacter* bob = new Character("bob");
+	me->use(-1, *bob);
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	me->use(4, *bob);
+
+	me->unequip(0);
+	me->use(0, *bob);
+	me->use(3, *bob);
+	me->unequip(-1);
+	me->equip(first);
+	delete bob;
+	delete me;
+	delete src;
+
+	return (0);
 }
