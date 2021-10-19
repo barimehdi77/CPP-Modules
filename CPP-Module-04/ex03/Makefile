@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/19 17:32:33 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/19 18:34:19 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,10 @@
 # Name of the final executable files
 NAME = ./PolyProMax
 
-
 # Project's directories
 SRCS_FOLDER = srcs
 OBJECTSDIR = objects
 HEADERS_FOLDER = headers
-
 
 # Name of variables
 FLAGS = -Wall -Wextra -Werror
@@ -29,14 +27,12 @@ YELLOW = \033[1;33m
 BLUE = \033[1;34m
 RESET = \033[0m
 
-
-# Phonebook files variable
+# Exercise files variable
 SRC_FILES = AMateria.cpp \
 Character.cpp \
 Cure.cpp \
 Ice.cpp \
 MateriaSource.cpp \
-
 
 # Define objects for all sources
 OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.cpp=.o))
@@ -57,7 +53,7 @@ all: credit $(NAME)
 	@echo "         Made with love by : \033[1;91mmbari\033[m"
 
 head:
-	@echo "$(BLUE)███████████████████████ Making PhoneBook ███████████████████████$(RESET)"
+	@echo "$(BLUE)█████████████████████ Making Polymorphism ██████████████████████$(RESET)"
 
 # Phonebook making rules
 $(NAME): head $(OBJS) main.o
@@ -95,11 +91,3 @@ credit:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo "━━━━━━━━━━━━━━━┃Made with love by : \033[1;91mmbari\033[m┃━━━━━━━━━━━━━━━━"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-
-
-
-
-
-
-
-
