@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 12:41:04 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 17:12:59 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:52:03 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../headers/Brain.hpp"
 
 
 Brain::Brain()
