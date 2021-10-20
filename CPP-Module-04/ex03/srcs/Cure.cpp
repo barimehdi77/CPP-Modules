@@ -6,12 +6,12 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:27:16 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/19 15:25:06 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:15 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
-#include "ICharacter.hpp"
+#include "../headers/Cure.hpp"
+#include "../headers/ICharacter.hpp"
 
 Cure::Cure(): AMateria("cure")
 {

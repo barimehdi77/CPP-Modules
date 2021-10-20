@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:41:44 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/19 16:38:57 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:12 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../headers/Character.hpp"
 
 Character::Character()
 {

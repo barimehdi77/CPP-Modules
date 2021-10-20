@@ -6,15 +6,15 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/19 16:38:31 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:33 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "MateriaSource.hpp"
-#include "Character.hpp"
+#include "headers/Cure.hpp"
+#include "headers/Ice.hpp"
+#include "headers/MateriaSource.hpp"
+#include "headers/Character.hpp"
 
 int main(void)
 {

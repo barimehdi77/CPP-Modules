@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:49:30 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/19 15:23:50 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:21 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "../headers/MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
 {

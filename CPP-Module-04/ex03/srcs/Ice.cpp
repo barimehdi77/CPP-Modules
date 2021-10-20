@@ -6,12 +6,12 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:00:16 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/18 17:21:44 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:19 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "ICharacter.hpp"
+#include "../headers/Ice.hpp"
+#include "../headers/ICharacter.hpp"
 
 
 Ice::Ice(): AMateria("ice")

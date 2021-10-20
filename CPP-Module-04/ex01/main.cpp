@@ -6,12 +6,12 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 16:56:52 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:55:58 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "headers/Cat.hpp"
+#include "headers/Dog.hpp"
 
 int main()
 {
