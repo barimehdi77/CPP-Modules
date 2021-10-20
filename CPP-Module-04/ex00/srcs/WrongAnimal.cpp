@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:32:07 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:33:04 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:11:44 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ std::string	WrongAnimal::getType() const { return (this->_type); }
 
 void		WrongAnimal::makeSound() const
 {
-	std::cout << "looks like an Wrong Animal sounds!" << std::endl;
+	std::cout << "looks like a Wrong Animal sounds!" << std::endl;
 }
