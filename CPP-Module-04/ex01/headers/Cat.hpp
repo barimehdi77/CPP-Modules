@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:14:24 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 16:42:43 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:49:41 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Cat: public Animal
 {
 	private:
-		Brain* _brain;
+		Brain*	_brain;
 	public:
 		Cat();
 		Cat( const Cat &src );

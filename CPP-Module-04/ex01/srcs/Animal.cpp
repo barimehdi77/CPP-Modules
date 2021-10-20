@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:56:04 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 17:12:44 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:50:08 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../headers/Animal.hpp"
 
 Animal::Animal()
 {

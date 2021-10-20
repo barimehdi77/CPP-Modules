@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:32:07 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/20 16:11:44 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:13:58 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../headers/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal()
 {

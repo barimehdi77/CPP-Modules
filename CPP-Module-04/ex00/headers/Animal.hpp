@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:43:50 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/20 16:10:15 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:28:57 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 	public:
 		Animal();
 		Animal( const Animal & src );
-		~Animal();
+		virtual ~Animal();
 		Animal & operator = ( const Animal & rhs );
 		std::string	getType() const;
 		virtual void		makeSound() const;

@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:16:11 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:24:19 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:13:52 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../headers/Cat.hpp"
 
 Cat::Cat() { this->_type = "Cat"; }
 

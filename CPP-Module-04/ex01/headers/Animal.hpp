@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:43:50 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 16:37:19 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:49:25 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Animal
 {
 	protected:
-		std::string _type;
+		std::string	_type;
 	public:
 		Animal();
 		Animal( const Animal & src );

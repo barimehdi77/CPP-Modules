@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:00:17 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 16:19:15 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:49:48 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Dog: public Animal
 {
 	private:
-		Brain* _brain;
+		Brain*	_brain;
 	public:
 		Dog();
 		Dog( const Dog &src );

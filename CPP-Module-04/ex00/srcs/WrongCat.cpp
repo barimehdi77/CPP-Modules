@@ -6,11 +6,11 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:34:01 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/19 18:35:00 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:14:02 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../headers/WrongCat.hpp"
 
 WrongCat::WrongCat() { this->_type = "WrongCat"; }
 

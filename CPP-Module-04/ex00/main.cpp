@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/20 12:31:07 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/20 16:27:02 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@ int main()
 	// const WrongCat* Wrongi = new WrongCat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	// std::cout << Wrongi->getType() << " " << std::endl;
+	std::cout << Wrongmeta->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 	Wrongmeta->makeSound();
 	// Wrongi->makeSound();
+	delete j;
+	delete i;
+	delete meta;
+	delete Wrongmeta;
 }
