@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/22 18:25:27 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/22 18:41:36 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ class Form
 		void					beSigned( Bureaucrat & brc );
 };
 
-// std::ostream&		operator << ( std::ostream& os, Form& form );
+std::ostream&		operator << ( std::ostream& os, Form& form );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:02:14 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/22 18:39:33 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/22 18:49:25 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
 		Form		contract("Contract", 1, 5);
 		Bureaucrat	director("Director", 1);
 
+		std::cout << contract;
+
 		director.singForm(contract);
 		contract.beSigned(director);
 	}
@@ -52,11 +54,13 @@ int main()
 	// what will happend if you try to sign a form with a lower garde? let's see
 	try
 	{
-		Form		contract("Contract", 1, 5);
+		Form		Project("Project Approval", 5, 10);
 		Bureaucrat	worker("worker", 77);
 
-		worker.singForm(contract);
-		contract.beSigned(worker);
+		std::cout << Project;
+
+		worker.singForm(Project);
+		Project.beSigned(worker);
 	}
 	catch(const std::exception& e)
 	{
