@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:48 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/18 17:03:23 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/22 18:35:15 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,15 @@ void	Bureaucrat::GardeIncrement()
 	if (this->_Grade == 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_Grade--;
+}
+
+void	Bureaucrat::singForm( Form & form )
+{
+	if (this->_Grade <= form.getReqGradeToSign())
+		std::cout << this->_Name << " sings " << form.getName() << std::endl;
+	else
+		std::cout << this->_Name << " cannot sign " << form.getName() << " because The form need garde "
+			<< form.getReqGradeToSign() << " to be signed" << std::endl;
 }
 
 std::ostream& operator<<( std::ostream& os, Bureaucrat& brc )

@@ -6,35 +6,45 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/21 14:38:34 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/22 18:25:27 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
+class Bureaucrat;
 #include <string>
 #include <iostream>
-
 class Form
 {
 	private:
-		std::string	_Name;
-		bool		_isSigned;
-		int			_reqGradeToSign;
-		int			_reqGradeToExecute;
+		std::string				_Name;
+		bool					_isSigned;
+		unsigned int			_reqGradeToSign;
+		unsigned int			_reqGradeToExecute;
 	public:
 		Form();
-		Form( std::string Name, int reqGradeToSign, int reqGradeToExecute );
+		Form( std::string Name, unsigned int reqGradeToSign, unsigned int reqGradeToExecute );
 		Form( const Form & src );
 		~Form();
-		Form &	operator = ( const Form & rhs );
-		void	getName();
-		void	getisSigned();
-		void	getReqGradeToSign();
-		void	getReqGradeToExecute();
-		void	beSigned();
-		void	signForm();
+		class GradeTooLowException: public std::exception
+		{
+			virtual	const char * what() const throw();
+		};
+		class GradeTooHighException: public std::exception
+		{
+			virtual	const char * what() const throw();
+		};
+
+		Form &					operator = ( const Form & rhs );
+		std::string				getName();
+		bool					getisSigned();
+		unsigned int			getReqGradeToSign();
+		unsigned int			getReqGradeToExecute();
+		void					beSigned( Bureaucrat & brc );
 };
+
+// std::ostream&		operator << ( std::ostream& os, Form& form );
 
 #endif

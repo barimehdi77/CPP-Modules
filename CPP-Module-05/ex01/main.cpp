@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:02:14 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/18 17:05:56 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/22 18:39:33 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,49 @@
 
 int main()
 {
-	// test the GardeIncrement()
+	// test the Form defult constructor
 	try
 	{
-		Bureaucrat bari("Bari", 2);
+		Form test;
 
-		std::cout << bari;
-		bari.GardeIncrement();
-		std::cout << bari;
-		bari.GardeIncrement();
+		std::cout << test.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// test the GardeDecrement()
+	// test the test the form pram constructor
 	try
 	{
-		Bureaucrat sameone("Sameone", 149);
+		Form test("test", -10, 180);
 
-		std::cout << sameone;
-		sameone.GradeDecrement();
-		std::cout << sameone;
-		sameone.GradeDecrement();
+		std::cout << test.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	// test the Bureaucrat constractor
+	// test the a working form declaration
 	try
 	{
-		Bureaucrat sameone("Sameone", 999);
+		Form		contract("Contract", 1, 5);
+		Bureaucrat	director("Director", 1);
+
+		director.singForm(contract);
+		contract.beSigned(director);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	// what will happend if you try to sign a form with a lower garde? let's see
 	try
 	{
-		Bureaucrat sameone("Sameone", 0);
+		Form		contract("Contract", 1, 5);
+		Bureaucrat	worker("worker", 77);
+
+		worker.singForm(contract);
+		contract.beSigned(worker);
 	}
 	catch(const std::exception& e)
 	{

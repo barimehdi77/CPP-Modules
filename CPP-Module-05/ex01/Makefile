@@ -6,12 +6,13 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/21 13:05:53 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/22 18:16:11 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			= main.cpp \
 Bureaucrat.cpp \
+Form.cpp \
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -23,8 +24,8 @@ NAME			= Bureaucrat
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) Bureaucrat.hpp
-				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I Bureaucrat.hpp
+$(NAME):		$(OBJS) Bureaucrat.hpp Form.hpp
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I Form.hpp -I Bureaucrat.hpp
 
 clean:
 				$(RM) $(OBJS)
