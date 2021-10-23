@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/21 13:04:25 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:01:12 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ class Bureaucrat
 		{
 			virtual const char* what() const throw();
 		};
-		
-		std::string		getName();
-		unsigned int	getGrage();
+
+		std::string		getName() const;
+		unsigned int	getGrage() const;
 		void			GardeIncrement();
 		void			GradeDecrement();
 };

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:48 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 16:18:18 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:03:16 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return ("BureaucratException: Grade too Low");
 }
 
-std::string	Bureaucrat::getName() { return (this->_Name); }
+std::string	Bureaucrat::getName() const { return (this->_Name); }
 
-unsigned int	Bureaucrat::getGrage() { return (this->_Grade); }
+unsigned int	Bureaucrat::getGrage() const { return (this->_Grade); }
 
 void	Bureaucrat::GradeDecrement()
 {

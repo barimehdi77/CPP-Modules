@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:24:31 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 15:25:27 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:30:53 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,29 @@ const char* Form::GradeTooLowException::what() const throw()
 	return ("FormException: Form Grade is too Low");
 }
 
-std::string				Form::getName() { return (this->_Name); }
-bool					Form::getisSigned() { return (this->_isSigned); }
-unsigned int			Form::getReqGradeToSign() { return (this->_reqGradeToSign); }
-unsigned int			Form::getReqGradeToExecute() { return (this->_reqGradeToExecute); }
+const char* Form::FormIsNotSigned::what() const throw()
+{
+	return ("FormException: Form Grade is Not signed");
+}
+
+std::string				Form::getName() const { return (this->_Name); }
+bool					Form::getisSigned() const { return (this->_isSigned); }
+unsigned int			Form::getReqGradeToSign() const { return (this->_reqGradeToSign); }
+unsigned int			Form::getReqGradeToExecute() const { return (this->_reqGradeToExecute); }
 
 void		Form::beSigned( Bureaucrat & brc )
 {
 	if (brc.getGrage() > this->_reqGradeToSign)
 		throw  Form::GradeTooLowException();
 	this->_isSigned = true;
+}
+
+void					Form::execute( Bureaucrat const & executor ) const
+{
+	if(this->getisSigned() == false)
+		throw Form::FormIsNotSigned();
+	else if (this->getReqGradeToExecute() >= executor.getGrage())
+		throw Form::GradeTooLowException();
 }
 
 std::ostream& operator<<( std::ostream& os, Form& form )

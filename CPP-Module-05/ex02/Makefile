@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/23 16:24:04 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/23 19:37:45 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ clean:
 
 fclean:			clean
 				$(RM) $(NAME)
+				$(RM) *_shrubbery
 
 re:				fclean $(NAME)
 

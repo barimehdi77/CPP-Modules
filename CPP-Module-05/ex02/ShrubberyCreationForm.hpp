@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 13:07:19 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 16:25:03 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:16:38 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class ShrubberyCreationForm: public Form
 		ShrubberyCreationForm( const ShrubberyCreationForm & src );
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm & operator = ( const ShrubberyCreationForm & rhs );
-
 		class FileCannotCreate: public std::exception
 		{
 			virtual	const char * what() const throw();
@@ -40,8 +39,8 @@ class ShrubberyCreationForm: public Form
 		{
 			virtual	const char * what() const throw();
 		};
-		void	action();
-		void	execute( Bureaucrat const & executor );
+		void	action() const;
+		void	execute( Bureaucrat const & executor ) const;
 };
 
 #endif

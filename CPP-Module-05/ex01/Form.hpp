@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/22 18:41:36 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:02:12 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ class Form
 		};
 
 		Form &					operator = ( const Form & rhs );
-		std::string				getName();
-		bool					getisSigned();
-		unsigned int			getReqGradeToSign();
-		unsigned int			getReqGradeToExecute();
+		std::string				getName() const;
+		bool					getisSigned() const;
+		unsigned int			getReqGradeToSign() const;
+		unsigned int			getReqGradeToExecute() const;
 		void					beSigned( Bureaucrat & brc );
 };
 

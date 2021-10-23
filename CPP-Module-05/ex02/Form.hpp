@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 15:49:44 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:09:00 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,18 @@ class Form
 		{
 			virtual	const char * what() const throw();
 		};
+		class FormIsNotSigned: public std::exception
+		{
+			virtual	const char * what() const throw();
+		};
+
 		Form &					operator = ( const Form & rhs );
-		std::string				getName();
-		bool					getisSigned();
-		unsigned int			getReqGradeToSign();
-		unsigned int			getReqGradeToExecute();
+		std::string				getName() const;
+		bool					getisSigned()  const;
+		unsigned int			getReqGradeToSign()  const;
+		unsigned int			getReqGradeToExecute()  const;
 		void					beSigned( Bureaucrat & brc );
-		virtual void			execute( Bureaucrat const & executor );
+		virtual void			execute( Bureaucrat const & executor ) const;
 };
 
 std::ostream&		operator << ( std::ostream& os, Form& form );
