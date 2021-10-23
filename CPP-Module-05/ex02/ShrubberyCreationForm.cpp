@@ -6,14 +6,14 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 13:20:12 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:36:42 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/23 19:49:32 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-std::string const ShrubberyCreationForm::Name = std::string("ShrubberyCreation");
+std::string const ShrubberyCreationForm::Name = std::string("Shrubbery Creation");
 
 ShrubberyCreationForm::ShrubberyCreationForm() {}
 
