@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:24:31 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:30:53 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/24 11:53:29 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,6 @@ void		Form::beSigned( Bureaucrat & brc )
 	if (brc.getGrage() > this->_reqGradeToSign)
 		throw  Form::GradeTooLowException();
 	this->_isSigned = true;
-}
-
-void					Form::execute( Bureaucrat const & executor ) const
-{
-	if(this->getisSigned() == false)
-		throw Form::FormIsNotSigned();
-	else if (this->getReqGradeToExecute() >= executor.getGrage())
-		throw Form::GradeTooLowException();
 }
 
 std::ostream& operator<<( std::ostream& os, Form& form )

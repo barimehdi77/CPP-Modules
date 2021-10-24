@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/23 19:37:45 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/24 12:28:51 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,20 @@ SRCS			= main.cpp \
 Bureaucrat.cpp \
 Form.cpp \
 ShrubberyCreationForm.cpp \
+RobotomyRequestForm.cpp \
 
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 NAME			= Bureaucrat
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp
-				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I Form.hpp -I ShrubberyCreationForm.hpp -I Bureaucrat.hpp
+$(NAME):		$(OBJS) Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I RobotomyRequestFor.hpp -I Form.hpp -I ShrubberyCreationForm.hpp -I Bureaucrat.hpp
 
 clean:
 				$(RM) $(OBJS)

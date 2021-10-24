@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:09:00 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/24 11:53:21 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ class Form
 		unsigned int			getReqGradeToSign()  const;
 		unsigned int			getReqGradeToExecute()  const;
 		void					beSigned( Bureaucrat & brc );
-		virtual void			execute( Bureaucrat const & executor ) const;
+		virtual void			execute( Bureaucrat const & executor ) const = 0;
+		virtual void			action() const = 0;
 };
 
 std::ostream&		operator << ( std::ostream& os, Form& form );
