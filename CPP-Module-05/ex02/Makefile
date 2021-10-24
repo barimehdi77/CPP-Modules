@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/24 12:28:51 by mbari            ###   ########.fr        #
+#    Updated: 2021/10/24 13:27:40 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ Bureaucrat.cpp \
 Form.cpp \
 ShrubberyCreationForm.cpp \
 RobotomyRequestForm.cpp \
+PresidentialPardonForm.cpp \
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -26,8 +27,8 @@ NAME			= Bureaucrat
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS) Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
-				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I RobotomyRequestFor.hpp -I Form.hpp -I ShrubberyCreationForm.hpp -I Bureaucrat.hpp
+$(NAME):		$(OBJS) Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS) -I RobotomyRequestFor.hpp -I Form.hpp -I ShrubberyCreationForm.hpp -I Bureaucrat.hpp -I PresidentialPardonForm.hpp
 
 clean:
 				$(RM) $(OBJS)

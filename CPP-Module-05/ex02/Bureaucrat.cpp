@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:48 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:03:16 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/24 13:47:57 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,13 @@ void	Bureaucrat::singForm( Form & form )
 	else
 		std::cout << this->_Name << " cannot sign " << form.getName() << " because The form need garde "
 			<< form.getReqGradeToSign() << " to be signed" << std::endl;
+}
+
+void	Bureaucrat::executeForm( Form const & form )
+{
+	if (form.getReqGradeToExecute() < this->_Grade)
+		throw Bureaucrat::GradeTooLowException();
+	std::cout << this->_Name << " executes " << form.getName() << std::endl;
 }
 
 std::ostream& operator<<( std::ostream& os, Bureaucrat& brc )

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 18:56:22 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/24 13:46:17 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Bureaucrat
 		void			GardeIncrement();
 		void			GradeDecrement();
 		void			singForm( Form & form );
+		void			executeForm( Form const & form );
 };
 
 std::ostream& operator << ( std::ostream& os, Bureaucrat& brc );

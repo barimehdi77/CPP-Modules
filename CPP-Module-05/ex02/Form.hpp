@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/24 11:53:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/24 12:51:16 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 		Form();
 		Form( std::string Name, unsigned int reqGradeToSign, unsigned int reqGradeToExecute );
 		Form( const Form & src );
-		~Form();
+		virtual ~Form();
 		class GradeTooLowException: public std::exception
 		{
 			virtual	const char * what() const throw();
