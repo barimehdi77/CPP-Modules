@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 02:20:54 by mbari             #+#    #+#             */
-/*   Updated: 2021/09/01 02:33:43 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/25 16:11:16 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	Karen::error( void )
 			<< "to the manager now." << std::endl;
 }
 
-// needs more explain
 void	Karen::complain( std::string level )
 {
 	std::string moods[] = {"debug", "info", "warning", "error"};
