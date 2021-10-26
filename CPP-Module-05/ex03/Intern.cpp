@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:50:26 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/25 17:25:56 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/26 16:04:29 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ Form* Intern::PresidentialPardon( std::string target )
 
 Form*	Intern::makeForm( std::string Type, std::string target )
 {
+	std::cout << "Intern creates " << Type << std::endl;
 	std::string	Forms[] = { "shrubbery creation", "robotomy request", "presidential pardon" };
 	Form* (Intern:: *form[]) (std::string target) = {
 		form[0] = &Intern::ShrubberyCreation,
