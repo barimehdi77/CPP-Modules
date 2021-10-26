@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:01:12 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/26 18:54:42 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Bureaucrat
 {
 	private:
-		std::string			_Name;
-		unsigned int		_Grade;
+		const std::string	_Name;
+		int					_Grade;
 	public:
 		Bureaucrat();
 		Bureaucrat( const std::string Name, int Grade );

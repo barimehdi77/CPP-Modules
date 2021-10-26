@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:07:18 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/23 19:02:12 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/26 18:49:26 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class Bureaucrat;
 class Form
 {
 	private:
-		std::string				_Name;
-		bool					_isSigned;
-		unsigned int			_reqGradeToSign;
-		unsigned int			_reqGradeToExecute;
+		const std::string	_Name;
+		bool				_isSigned;
+		const int			_reqGradeToSign;
+		const int			_reqGradeToExecute;
 	public:
 		Form();
-		Form( std::string Name, unsigned int reqGradeToSign, unsigned int reqGradeToExecute );
+		Form( std::string Name, int reqGradeToSign, int reqGradeToExecute );
 		Form( const Form & src );
 		~Form();
 		class GradeTooLowException: public std::exception
@@ -40,8 +40,8 @@ class Form
 		Form &					operator = ( const Form & rhs );
 		std::string				getName() const;
 		bool					getisSigned() const;
-		unsigned int			getReqGradeToSign() const;
-		unsigned int			getReqGradeToExecute() const;
+		int			getReqGradeToSign() const;
+		int			getReqGradeToExecute() const;
 		void					beSigned( Bureaucrat & brc );
 };
 
