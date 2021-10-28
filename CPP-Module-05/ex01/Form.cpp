@@ -6,14 +6,14 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:24:31 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/26 18:53:26 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/28 17:46:12 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form()
+Form::Form(): _Name(), _reqGradeToSign(), _reqGradeToExecute()
 {
 	throw Form::GradeTooHighException();
 }

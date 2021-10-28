@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:50:26 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/26 16:04:29 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/28 18:18:31 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ Form* Intern::PresidentialPardon( std::string target )
 
 Form*	Intern::makeForm( std::string Type, std::string target )
 {
-	std::cout << "Intern creates " << Type << std::endl;
 	std::string	Forms[] = { "shrubbery creation", "robotomy request", "presidential pardon" };
 	Form* (Intern:: *form[]) (std::string target) = {
 		form[0] = &Intern::ShrubberyCreation,
@@ -50,6 +49,9 @@ Form*	Intern::makeForm( std::string Type, std::string target )
 	};
 	for(int i = 0; i < 3; i++)
 		if(Forms[i] == Type)
+		{
+			std::cout << "Intern creates " << Type << std::endl;
 			return ((this->*form[i])(target));
+		}
 	throw Intern::FormNotFound();
 }

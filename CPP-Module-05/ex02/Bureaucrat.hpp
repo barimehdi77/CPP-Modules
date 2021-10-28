@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/24 13:46:17 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/28 17:55:54 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Bureaucrat
 {
 	private:
-		std::string			_Name;
-		unsigned int		_Grade;
+		const std::string	_Name;
+		int					_Grade;
 	public:
 		Bureaucrat();
 		Bureaucrat( const std::string Name, int Grade );
@@ -37,12 +37,12 @@ class Bureaucrat
 			virtual const char* what() const throw();
 		};
 
-		std::string		getName() const;
-		unsigned int	getGrage() const;
-		void			GardeIncrement();
-		void			GradeDecrement();
-		void			singForm( Form & form );
-		void			executeForm( Form const & form );
+		std::string	getName() const;
+		int			getGrage() const;
+		void		GardeIncrement();
+		void		GradeDecrement();
+		void		singForm( Form & form );
+		void		executeForm( Form const & form );
 };
 
 std::ostream& operator << ( std::ostream& os, Bureaucrat& brc );

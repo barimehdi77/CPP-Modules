@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:48 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/24 13:47:57 by mbari            ###   ########.fr       */
+/*   Updated: 2021/10/28 18:01:15 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Bureaucrat::Bureaucrat()
 	throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const std::string Name, int Grade )
+Bureaucrat::Bureaucrat( const std::string Name, int Grade ): _Name(Name)
 {
-	this->_Name = Name;
 	if (Grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (Grade > 150)
@@ -28,7 +27,8 @@ Bureaucrat::Bureaucrat( const std::string Name, int Grade )
 		this->_Grade = Grade;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src ) { *this = src; }
+Bureaucrat::Bureaucrat( const Bureaucrat & src ): _Name(src._Name)
+{ *this = src; }
 
 Bureaucrat::~Bureaucrat() {}
 
@@ -36,7 +36,6 @@ Bureaucrat & Bureaucrat::operator=( const Bureaucrat & rhs )
 {
 	if (this == &rhs)
 		return (*this);
-	this->_Name = rhs._Name;
 	this->_Grade = rhs._Grade;
 	return (*this);
 }
@@ -53,7 +52,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::string	Bureaucrat::getName() const { return (this->_Name); }
 
-unsigned int	Bureaucrat::getGrage() const { return (this->_Grade); }
+int	Bureaucrat::getGrage() const { return (this->_Grade); }
 
 void	Bureaucrat::GradeDecrement()
 {
