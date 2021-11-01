@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/10/25 17:36:13 by mbari            ###   ########.fr        #
+#    Updated: 2021/11/01 12:01:32 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ BLUE = \033[1;34m
 RESET = \033[0m
 
 # Exercise files variable
-SRC_FILES =
+SRC_FILES = Casts.cpp
 
 # Define objects for all sources
 OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.cpp=.o))
@@ -72,7 +72,7 @@ clean:
 
 fclean: clean
 	@echo "$(RED)deleting$(RESET): " $(NAME)
-	@$(RM) $(NAME) philo.dSYM $(ERRIGNORE)
+	@$(RM) $(NAME) $(ERRIGNORE)
 
 re: fclean all
 

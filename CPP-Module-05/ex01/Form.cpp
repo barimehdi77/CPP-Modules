@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:24:31 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/28 17:46:12 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/01 15:49:45 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		Form::beSigned( Bureaucrat & brc )
 std::ostream& operator<<( std::ostream& os, Form& form )
 {
 	os << "The Form " << form.getName() << ", need a Bureaucrat has Grade " << form.getReqGradeToSign() << " or higher to be able to sign, and need a Bureaucrat has Grade "
-		<< form.getReqGradeToSign() << " or higher to be execute ";
+		<< form.getReqGradeToExecute() << " or higher to be execute ";
 	if (form.getisSigned() == true)
 		os << "and it's signed" << std::endl;
 	else
