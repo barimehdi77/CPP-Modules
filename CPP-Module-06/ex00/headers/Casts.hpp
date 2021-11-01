@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/01 09:47:07 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/01 16:38:48 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,16 @@ class Casts
 		Casts( const Casts & src);
 		~Casts();
 		Casts & operator = ( const Casts & rhs );
-
+		class ArgsError: public std::exception
+		{
+			virtual const char* what() const throw();
+		};
 		int		getIntForm() const;
 		char	getCharForm() const;
 		float	getFloatForm() const;
 		double	getDoubleForm() const;
 };
+
+int	ErrorCheck( int const is_it[4] );
 
 #endif
