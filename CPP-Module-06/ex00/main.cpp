@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/29 19:29:30 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/01 08:04:26 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int main(int ac, char **av)
 {
 	std::string ss(av[1]);
-	int* test = dynamic_cast<int*>(ss);
+	// int* test = dynamic_cast<int>(ss);
 	// long int test1 = 0;
 	// ss >> test;
 

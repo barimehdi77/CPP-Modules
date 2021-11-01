@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 15:04:35 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/26 18:54:30 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/01 09:04:37 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
 		};
 
 		std::string		getName() const;
-		unsigned int	getGrage() const;
+		int	getGrage() const;
 		void			GardeIncrement();
 		void			GradeDecrement();
 		void			singForm( Form & form );
