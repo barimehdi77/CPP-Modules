@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/02 13:22:53 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 13:24:40 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ class Casts
 };
 
 int		ErrorCheck( char type, const std::string & Number );
-char	getType( const std::string & Number );
+char	Parsing( const std::string & Number );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/02 13:23:09 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 13:25:20 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ Casts::Casts()
 
 Casts::Casts( const std::string Number)
 {
-	char type = getType(Number);
-	if (!(ErrorCheck(type, Number)))
+	this->_Type = Parsing(Number);
+	if (!(ErrorCheck(this->_Type, Number)))
 		throw Casts::ArgsError();
 
-	std::cout << type << " ";
+	std::cout << this->_Type << " ";
 }
 
 Casts::Casts( const Casts &  src) { *this = src;}
@@ -65,7 +65,7 @@ int		ErrorCheck( char type, const std::string & Number )
 	return (1);
 }
 
-char	getType( const std::string & Number )
+char	Parsing( const std::string & Number )
 {
 	char type = 0;
 	if (std::isdigit(Number[0]) || (Number[0] == '-' && std::isdigit(Number[1])))
