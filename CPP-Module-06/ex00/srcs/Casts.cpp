@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/01 16:38:51 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:20:58 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,41 +25,32 @@ Casts::Casts( const std::string Number)
 	is_it[2] for float
 	is_it[3] for double
 	*/
-	int is_it[4] = {0, 0, 0, 0};
-	for(size_t i = 0; i < Number.length(); i++)
-	{
-		if(std::isdigit(Number[i]))
-			is_it[0] = 1;
-		else if(std::isalpha(Number[i]))
-		{
-			is_it[1] = 1;
-			break;
-		}
-		else if(Number[i] == '.')
-		{
-			// is_it[0] = 0;
-			if (Number.back() == 'f')
-				is_it[2] = 1;
-			else
-				is_it[3] = 1;
-			break;
-		}
-	}
-	if (!(ErrorCheck(is_it)))
+	char type = getType(Number);
+	if (type == 'c' && Number.length() != 1)
 		throw Casts::ArgsError();
-	for(int i = 0; i < 4; i++)
-		std::cout << is_it[i] << " ";
-}
-
-int		ErrorCheck( int const is_it[4] )
-{
-	if (is_it[0]&& is_it[1])
-		return (0);
-	else if (!(is_it[0] && is_it[1] && is_it[2] && is_it[3]))
-		return (0);
-	else if (!is_it[0] && (is_it[2] || is_it[3]))
-		return (0);
-	return (1);
+	else
+		for(size_t i = 0; i < Number.length(); i++)
+			if (!std::isdigit(Number[i]) && Number[i] != '.' && Number.back() != 'f')
+				throw Casts::ArgsError();
+	// int is_it[4] = {0, 0, 0, 0};
+	// for(size_t i = 0; i < Number.length(); i++)
+	// {
+	// 	if(std::isdigit(Number[i]))
+	// 		is_it[0] = 1;
+	// 	else if(std::isalpha(Number[i]))
+	// 		is_it[1] = 1;
+	// 	else if(Number[i] == '.')
+	// 	{
+	// 		// is_it[0] = 0;
+	// 		if (Number.back() == 'f')
+	// 			is_it[2] = 1;
+	// 		else
+	// 			is_it[3] = 1;
+	// 	}
+	// }
+	// if (!(ErrorCheck(is_it)))
+	// 	throw Casts::ArgsError();
+	std::cout << type << " ";
 }
 
 Casts::Casts( const Casts &  src) { *this = src;}
@@ -88,3 +79,40 @@ int		Casts::getIntForm() const { return (this->_IntForm); }
 char	Casts::getCharForm() const { return (this->_CharForm); }
 float	Casts::getFloatForm() const { return (this->_FloatForm); }
 double	Casts::getDoubleForm() const { return (this->_DoubleForm); }
+
+int		ErrorCheck( int const is_it[4] )
+{
+	if (is_it[0] && is_it[1])
+		return (0);
+	else if (!is_it[0] && !is_it[1] && !is_it[2] && !is_it[3])
+		return (0);
+	else if (!is_it[0] && (is_it[2] || is_it[3]))
+		return (0);
+	return (1);
+}
+
+char	getType( std::string Number )
+{
+	char type = 0;
+	if (std::isdigit(Number[0]))
+	{
+		for(size_t i = 0; i < Number.length(); i++)
+		{
+			if (Number[i] == '.' && Number.back() == 'f')
+			{
+				type = 'f';
+				break;
+			}
+			else if (Number[i] == '.' && Number.back() != 'f')
+			{
+				type = 'd';
+				break;
+			}
+		}
+		if (type == 0)
+			type = 'i';
+	}
+	else
+		type = 'c';
+	return (type);
+}

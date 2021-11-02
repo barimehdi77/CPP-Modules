@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/01 16:38:48 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:13:03 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Casts
 		double	getDoubleForm() const;
 };
 
-int	ErrorCheck( int const is_it[4] );
+int		ErrorCheck( int const is_it[4] );
+char	getType( std::string Number );
 
 #endif
