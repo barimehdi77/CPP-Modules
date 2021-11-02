@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/02 13:17:42 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 13:23:09 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Casts::Casts()
 {
-	std::cout << "skdos";
+	throw Casts::ArgsError();
 }
 
 Casts::Casts( const std::string Number)
@@ -22,6 +22,7 @@ Casts::Casts( const std::string Number)
 	char type = getType(Number);
 	if (!(ErrorCheck(type, Number)))
 		throw Casts::ArgsError();
+
 	std::cout << type << " ";
 }
 
@@ -47,6 +48,7 @@ const char* Casts::ArgsError::what() const throw()
 	return ("CastsException: Non-valid arg");
 }
 
+int		Casts::getType() const { return (this->_Type); }
 int		Casts::getIntForm() const { return (this->_IntForm); }
 char	Casts::getCharForm() const { return (this->_CharForm); }
 float	Casts::getFloatForm() const { return (this->_FloatForm); }

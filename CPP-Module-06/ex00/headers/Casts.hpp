@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/02 13:19:41 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/02 13:22:53 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class Casts
 {
 	private:
+		char	_Type;
 		int		_IntForm;
 		char	_CharForm;
 		float	_FloatForm;
@@ -33,6 +34,7 @@ class Casts
 		{
 			virtual const char* what() const throw();
 		};
+		int		getType() const;
 		int		getIntForm() const;
 		char	getCharForm() const;
 		float	getFloatForm() const;
