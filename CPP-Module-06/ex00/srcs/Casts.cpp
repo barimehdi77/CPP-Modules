@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/05 15:49:42 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/05 16:09:33 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Casts::Casts( const std::string Number ):
 		this->_FloatForm = std::stof(Number);
 	else if (this->_Type == 'd')
 		this->_DoubleForm = std::stod(Number);
-	std::cout << this->_DoubleForm << "-------" << Number << "\n";
 }
 
 Casts::Casts( const Casts &  src) { *this = src;}
@@ -109,7 +108,12 @@ std::string	Casts::print( int type, std::string Number )
 		else if (!std::isprint(this->_CharForm))
 			return ("Non displayable");
 		else
-			return (std::to_string(this->_CharForm));
+		{
+			std::string s = "'";
+			s.push_back(this->_CharForm);
+			s.push_back('\'');
+			return (s);
+		}
 	}
 	else if ( type == 'f' )
 		return (this->printFloat(Number));
@@ -126,6 +130,8 @@ std::string	Casts::printFloat( std::string Number )
 		return (Number);
 	else
 	{
+		if (this->_Type == 'f')
+			Number.erase(Number.length() - 1);
 		std::string fs = std::to_string(this->_FloatForm);
 		if (Number.find(".") == std::string::npos)
 		{
@@ -143,6 +149,8 @@ std::string	Casts::printFloat( std::string Number )
 
 std::string	Casts::printDouble( std::string Number )
 {
+	if (this->_Type == 'f')
+		Number.erase(Number.length() - 1);
 	if (Number == "nan" || Number == "+inf" || Number == "-inf")
 		return (Number);
 	else if (Number == "+inff" || Number == "-inff")
