@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/04 13:57:25 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/05 12:55:48 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Casts
 		float	_FloatForm;
 		double	_DoubleForm;
 	public:
-		std::string const str;
+		// std::string const str;
 		Casts();
 		Casts( const std::string Number );
 		Casts( const Casts & src);
@@ -46,6 +46,7 @@ class Casts
 		void	FromFloat();
 		void	FromDouble();
 
+		std::string	print( int type, std::string Number );
 };
 
 int		ErrorCheck( char type, const std::string & Number );

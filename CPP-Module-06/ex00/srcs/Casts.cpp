@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/04 15:58:40 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/05 13:27:19 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,18 @@ Casts::Casts()
 Casts::Casts( const std::string Number ):
 		_Type(0), _IntForm(0), _CharForm(0), _FloatForm(0.0), _DoubleForm(0.0)
 {
-	std::stringstream ss;
-	ss << Number;
 	this->_Type = Parsing(Number);
 	if (!(ErrorCheck(this->_Type, Number)))
 		throw Casts::ArgsError();
 	if (this->_Type == 'i')
-		ss >> this->_IntForm;
+		this->_IntForm = std::stoi(Number);
 	else if (this->_Type == 'c')
-		ss >> this->_CharForm;
+		this->_CharForm = Number[0];
 	else if (this->_Type == 'f')
-		ss >> this->_FloatForm;
+		this->_FloatForm = std::stof(Number);
 	else if (this->_Type == 'd')
-		ss >> this->_DoubleForm;
+		this->_DoubleForm = std::stod(Number);
+	std::cout << this->_DoubleForm << "-------" << Number << "\n";
 }
 
 Casts::Casts( const Casts &  src) { *this = src;}
@@ -63,6 +62,13 @@ char	Casts::getCharForm() const { return (this->_CharForm); }
 float	Casts::getFloatForm() const { return (this->_FloatForm); }
 double	Casts::getDoubleForm() const { return (this->_DoubleForm); }
 
+void	Casts::FromChar()
+{
+	this->_IntForm = static_cast<int>(this->_CharForm);
+	this->_FloatForm = static_cast<float>(this->_CharForm);
+	this->_DoubleForm = static_cast<double>(this->_CharForm);
+}
+
 void	Casts::FromInt()
 {
 	this->_CharForm = static_cast<char>(this->_IntForm);
@@ -75,6 +81,13 @@ void	Casts::FromFloat()
 	this->_CharForm = static_cast<char>(this->_FloatForm);
 	this->_IntForm = static_cast<int>(this->_FloatForm);
 	this->_DoubleForm = static_cast<double>(this->_FloatForm);
+}
+
+void	Casts::FromDouble()
+{
+	this->_CharForm = static_cast<char>(this->_DoubleForm);
+	this->_IntForm = static_cast<int>(this->_DoubleForm);
+	this->_FloatForm = static_cast<float>(this->_DoubleForm);
 }
 
 int		ErrorCheck( char type, const std::string & Number )
@@ -133,4 +146,52 @@ char	Parsing( const std::string & Number )
 			type = 0;
 	}
 	return (type);
+}
+
+std::string	Casts::print( int type, std::string Number )
+{
+	if ( type == 'i' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
+			Number == "nanf" || Number == "+inff" || Number == "-inff")
+			return ("impossible");
+		else
+			return (std::to_string(this->_IntForm));
+	}
+	else if ( type == 'c' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
+			Number == "nanf" || Number == "+inff" || Number == "-inff")
+			return ("impossible");
+		else if (!std::isprint(this->_CharForm))
+			return ("Non displayable");
+		else
+			return (std::to_string(this->_CharForm));
+	}
+	else if ( type == 'f' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf")
+			return (Number + "f");
+		else if (Number == "nanf" || Number == "+inff" || Number == "-inff")
+			return (Number);
+		else
+			return (std::to_string(this->_FloatForm) + "f");
+	}
+	else if ( type == 'd' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf")
+			return (Number);
+		else if (Number == "+inff" || Number == "-inff")
+			return (Number.erase(4));
+		else if (Number == "nanf")
+			return (Number.erase(3));
+		else
+		{
+			std::string	ds = std::to_string(this->_DoubleForm);
+			int	DAFP = ds.substr(ds.find("."), ds.length()).length();
+			std::cout << ds << " " << DAFP << std::endl;
+			return (std::to_string(this->_DoubleForm));
+		}
+	}
+	throw Casts::ArgsError();
 }
