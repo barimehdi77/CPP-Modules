@@ -6,11 +6,12 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:47:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/05 13:27:19 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/05 15:49:42 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/Casts.hpp"
+#include <cmath>
 
 Casts::Casts()
 {
@@ -90,6 +91,81 @@ void	Casts::FromDouble()
 	this->_FloatForm = static_cast<float>(this->_DoubleForm);
 }
 
+std::string	Casts::print( int type, std::string Number )
+{
+	if ( type == 'i' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
+			Number == "nanf" || Number == "+inff" || Number == "-inff")
+			return ("impossible");
+		else
+			return (std::to_string(this->_IntForm));
+	}
+	else if ( type == 'c' )
+	{
+		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
+			Number == "nanf" || Number == "+inff" || Number == "-inff")
+			return ("impossible");
+		else if (!std::isprint(this->_CharForm))
+			return ("Non displayable");
+		else
+			return (std::to_string(this->_CharForm));
+	}
+	else if ( type == 'f' )
+		return (this->printFloat(Number));
+	else if ( type == 'd' )
+		return (this->printDouble(Number));
+	throw Casts::ArgsError();
+}
+
+std::string	Casts::printFloat( std::string Number )
+{
+	if (Number == "nan" || Number == "+inf" || Number == "-inf")
+		return (Number + "f");
+	else if (Number == "nanf" || Number == "+inff" || Number == "-inff")
+		return (Number);
+	else
+	{
+		std::string fs = std::to_string(this->_FloatForm);
+		if (Number.find(".") == std::string::npos)
+		{
+			if (this->_Type == 'c')
+				return (fs.erase(count_digit(Number[0]) + 2) + "f");
+			return (fs.erase(Number.length() + 2) + "f");
+		}
+		int DBFP = Number.substr(1, Number.find(".")).length();
+		int DAFP = Number.substr(Number.find("."), Number.length()).length();
+		if (DAFP > 7)
+			DAFP = 7;
+		return (fs.erase(DAFP + DBFP) + "f");
+	}
+}
+
+std::string	Casts::printDouble( std::string Number )
+{
+	if (Number == "nan" || Number == "+inf" || Number == "-inf")
+		return (Number);
+	else if (Number == "+inff" || Number == "-inff")
+		return (Number.erase(4));
+	else if (Number == "nanf")
+		return (Number.erase(3));
+	else
+	{
+		std::string ds = std::to_string(this->_DoubleForm);
+		if (Number.find(".") == std::string::npos)
+		{
+			if (this->_Type == 'c')
+				return (ds.erase(count_digit(Number[0]) + 2));
+			return (ds.erase(Number.length() + 2));
+		}
+		int DBFP = Number.substr(1, Number.find(".")).length();
+		int DAFP = Number.substr(Number.find("."), Number.length()).length();
+		if (DAFP > 7)
+			DAFP = 7;
+		return (ds.erase(DAFP + DBFP));
+	}
+}
+
 int		ErrorCheck( char type, const std::string & Number )
 {
 	if (type == 0)
@@ -148,50 +224,6 @@ char	Parsing( const std::string & Number )
 	return (type);
 }
 
-std::string	Casts::print( int type, std::string Number )
-{
-	if ( type == 'i' )
-	{
-		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
-			Number == "nanf" || Number == "+inff" || Number == "-inff")
-			return ("impossible");
-		else
-			return (std::to_string(this->_IntForm));
-	}
-	else if ( type == 'c' )
-	{
-		if (Number == "nan" || Number == "+inf" || Number == "-inf" ||
-			Number == "nanf" || Number == "+inff" || Number == "-inff")
-			return ("impossible");
-		else if (!std::isprint(this->_CharForm))
-			return ("Non displayable");
-		else
-			return (std::to_string(this->_CharForm));
-	}
-	else if ( type == 'f' )
-	{
-		if (Number == "nan" || Number == "+inf" || Number == "-inf")
-			return (Number + "f");
-		else if (Number == "nanf" || Number == "+inff" || Number == "-inff")
-			return (Number);
-		else
-			return (std::to_string(this->_FloatForm) + "f");
-	}
-	else if ( type == 'd' )
-	{
-		if (Number == "nan" || Number == "+inf" || Number == "-inf")
-			return (Number);
-		else if (Number == "+inff" || Number == "-inff")
-			return (Number.erase(4));
-		else if (Number == "nanf")
-			return (Number.erase(3));
-		else
-		{
-			std::string	ds = std::to_string(this->_DoubleForm);
-			int	DAFP = ds.substr(ds.find("."), ds.length()).length();
-			std::cout << ds << " " << DAFP << std::endl;
-			return (std::to_string(this->_DoubleForm));
-		}
-	}
-	throw Casts::ArgsError();
+int count_digit( int number ) {
+   return int(log10(number) + 1);
 }

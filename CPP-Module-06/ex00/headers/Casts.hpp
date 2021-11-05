@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 09:37:28 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/05 12:55:48 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/05 15:44:48 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ class Casts
 		void	FromDouble();
 
 		std::string	print( int type, std::string Number );
+		std::string printFloat( std::string Number );
+		std::string printDouble( std::string Number );
 };
 
 int		ErrorCheck( char type, const std::string & Number );
 char	Parsing( const std::string & Number );
+int		count_digit( int number );
 
 #endif
