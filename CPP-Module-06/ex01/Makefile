@@ -6,16 +6,15 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/11/02 12:00:38 by mbari            ###   ########.fr        #
+#    Updated: 2021/11/06 12:06:11 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Name of the final executable files
-NAME = ./Casts
+NAME = ./Serialization
 
 # Project's directories
-SRCS_FOLDER = srcs
 OBJECTSDIR = objects
 HEADERS_FOLDER = headers
 
@@ -28,10 +27,10 @@ BLUE = \033[1;34m
 RESET = \033[0m
 
 # Exercise files variable
-SRC_FILES = Casts.cpp
+SRC_FILES = main.cpp
 
 # Define objects for all sources
-OBJS := $(addprefix $(OBJECTSDIR)/, $(SRC_FILES:.cpp=.o))
+OBJS := $(SRC_FILES:.cpp=.o)
 
 # Name the compiler
 CC = clang++
@@ -52,22 +51,18 @@ head:
 	@echo "$(BLUE)█████████████████████████ Making Files █████████████████████████$(RESET)"
 
 # making rules
-$(NAME): head $(OBJS) main.o
-	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) $(OBJECTSDIR)/main.o -o $@
+$(NAME): head $(OBJS)
+	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@
 
-$(OBJECTSDIR)/%.o: $(SRCS_FOLDER)/%.cpp $(HEADERS_FOLDER)
+main.o: main.cpp
 	@$(MKDIR) $(dir $@)
 	@echo "$(BLUE)█ $(YELLOW)Compiling$(RESET) $<:\r\t\t\t\t\t\t\t$(GREEN){DONE}$(BLUE) █$(RESET)"
 	@$(CC) $(FLAGS) -I $(HEADERS_FOLDER) -o $@ -c $<
 
-main.o: main.cpp $(HEADERS_FOLDER)
-	@echo "$(BLUE)█ $(YELLOW)Compiling$(RESET) $<:\r\t\t\t\t\t\t\t$(GREEN){DONE}$(BLUE) █$(RESET)"
-	@$(CC) $(FLAGS) -I $(HEADERS_FOLDER) -o $(OBJECTSDIR)/$@ -c $<
-
 # Remove all objects, dependencies and executable files generated during the build
 clean:
-	@echo "$(RED)deleting$(RESET): " $(OBJECTSDIR)
-	@$(RMDIR) $(OBJECTSDIR)
+	@echo "$(RED)deleting$(RESET): " objects
+	@$(RMDIR) $(OBJS)
 
 
 fclean: clean
