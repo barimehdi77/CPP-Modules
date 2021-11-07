@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/07 21:16:54 by mbari            ###   ########.fr       */
+/*   Created: 2021/11/07 21:07:53 by mbari             #+#    #+#             */
+/*   Updated: 2021/11/07 21:11:46 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "headers/Threeclasses.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-
-Base * generate(void)
+class Base
 {
-	
-}
+	public:
+		virtual ~Base();
+};
 
-int main()
-{
 
-	return (0);
-}
+#endif

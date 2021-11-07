@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Threeclasses.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 17:42:51 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/07 21:16:54 by mbari            ###   ########.fr       */
+/*   Created: 2021/11/07 21:12:41 by mbari             #+#    #+#             */
+/*   Updated: 2021/11/07 21:14:51 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "headers/Threeclasses.hpp"
+#ifndef A_HPP
+#define A_HPP
+#include "Base.hpp"
 
-
-Base * generate(void)
+class A: public Base
 {
-	
-}
+};
 
-int main()
+class B: public Base
 {
+};
 
-	return (0);
-}
+class C: public Base
+{
+};
+
+#endif
