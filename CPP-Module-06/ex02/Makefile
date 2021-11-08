@@ -6,13 +6,13 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/11/06 12:06:11 by mbari            ###   ########.fr        #
+#    Updated: 2021/11/08 17:27:00 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Name of the final executable files
-NAME = ./Serialization
+NAME = ./RealType
 
 # Project's directories
 OBJECTSDIR = objects
