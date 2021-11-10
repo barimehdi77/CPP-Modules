@@ -6,7 +6,7 @@
 #    By: mbari <mbari@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2021/11/08 18:28:52 by mbari            ###   ########.fr        #
+#    Updated: 2021/11/10 15:31:00 by mbari            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = ./SomeFunctions
 
 # Project's directories
 OBJECTSDIR = objects
-HEADERS_FOLDER = headers
+HEADERFILE = whatever.hpp
 
 # Name of variables
 FLAGS = -Wall -Wextra -Werror
@@ -51,13 +51,13 @@ head:
 	@echo "$(BLUE)█████████████████████████ Making Files █████████████████████████$(RESET)"
 
 # making rules
-$(NAME): head $(OBJS)
-	@$(CC) -I $(HEADERS_FOLDER) $(OBJS) -o $@
+$(NAME): head $(HEADERFILE) $(OBJS)
+	@$(CC) -I $(HEADERFILE) $(OBJS) -o $@
 
-main.o: main.cpp
+main.o: main.cpp $(HEADERFILE)
 	@$(MKDIR) $(dir $@)
 	@echo "$(BLUE)█ $(YELLOW)Compiling$(RESET) $<:\r\t\t\t\t\t\t\t$(GREEN){DONE}$(BLUE) █$(RESET)"
-	@$(CC) $(FLAGS) -I $(HEADERS_FOLDER) -o $@ -c $<
+	@$(CC) $(FLAGS) -I $(HEADERFILE) -o $@ -c $<
 
 # Remove all objects, dependencies and executable files generated during the build
 clean:
