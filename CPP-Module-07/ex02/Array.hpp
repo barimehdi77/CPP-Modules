@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:21:37 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/10 18:21:12 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/11 14:51:07 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,13 @@ class Array
 		};
 		T & operator[]( unsigned int n )
 		{
-			if (n > this->_size || n < 0)
+			if (n > this->_size)
+				throw Array::OutofBounds();
+			return (this->_arr[n]);
+		};
+		const T & operator[]( unsigned int n ) const
+		{
+			if (n > this->_size)
 				throw Array::OutofBounds();
 			return (this->_arr[n]);
 		};

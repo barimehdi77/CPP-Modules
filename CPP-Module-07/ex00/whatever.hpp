@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:12:34 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/10 15:31:21 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/11 14:50:25 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	swap(T &x, T &y)
 }
 
 template <typename T>
-T	min(T x, T y)
+T	&min(T &x, T &y)
 {
 	return ((x < y) ? x : y);
 }
 
 template <typename T>
-T	max(T x, T y)
+T	&max(T &x, T &y)
 {
 	return ((x > y) ? x : y);
 }
