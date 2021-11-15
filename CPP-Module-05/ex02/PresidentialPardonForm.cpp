@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 12:30:54 by mbari             #+#    #+#             */
-/*   Updated: 2021/10/24 12:59:13 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/15 13:02:28 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,4 @@ void	PresidentialPardonForm::execute( Bureaucrat const & executor ) const
 		throw PresidentialPardonForm::GradeTooLowException();
 	this->action();
 }
+
