@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:08:14 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/15 16:28:34 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/15 17:55:02 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ const char* Span::NoSpaceLeft::what() const throw()
 
 void	Span::addNumber( int Number )
 {
-	if (this->_N >= this->_vec.size())
+	if (this->_N == this->_vec.size())
 		throw Span::NoSpaceLeft();
 	this->_vec.push_back(Number);
 }
@@ -58,11 +58,13 @@ int		Span::shortestSpan()
 {
 	if (this->_vec.size() <= 1)
 		throw NoSpan();
-	int ret = 0;
-	for (size_t i = 0; i < this->_vec.size(); i++)
+	std::vector<int> sorted = this->_vec;
+	std::sort(sorted.begin(), sorted.end());
+	int ret = sorted[1] - sorted[0];
+	for (size_t i = 0; i < sorted.size() - 1; i++)
 	{
-		if (ret > this->_vec[i + 1] - this->_vec[i])
-			ret = this->_vec[i + 1] - this->_vec[i];
+		if (ret > sorted[i + 1] - sorted[i])
+			ret = sorted[i + 1] - sorted[i];
 	}
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:21:45 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/15 16:20:37 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/15 18:05:15 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ class Span
 		~Span();
 		Span & operator = ( const Span & rhs );
 
-		class NoSpan
+		class NoSpan: public std::exception
 		{
 			virtual const char* what() const throw();
 		};
 
-		class NoSpaceLeft
+		class NoSpaceLeft: public std::exception
 		{
 			virtual const char* what() const throw();
 		};
@@ -45,7 +45,7 @@ class Span
 		void	addNumber(T start, T end)
 		{
 			int dist = std::distance(start, end);
-			if (dist + this->_vec.size() > this->N)
+			if (dist + this->_vec.size() > this->_N)
 				throw Span::NoSpaceLeft();
 			this->_vec.insert(this->_vec.end(), start, end);
 		}
