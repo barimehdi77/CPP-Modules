@@ -6,7 +6,7 @@
 /*   By: mbari <mbari@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:21:45 by mbari             #+#    #+#             */
-/*   Updated: 2021/11/15 18:05:15 by mbari            ###   ########.fr       */
+/*   Updated: 2021/11/19 17:34:24 by mbari            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 class Span
 {
 	private:
-		unsigned int _N;
-		std::vector<int> _vec;
+		unsigned int		_N;
+		std::vector<int>	_vec;
 		Span();
 	public:
 		Span( unsigned int N );
