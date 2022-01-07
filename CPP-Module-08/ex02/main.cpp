@@ -30,10 +30,10 @@ int main()
 		mstack.push(777);
 		mstack.push(7);
 		MutantStack<int>::iterator it = mstack.begin();
-		MutantStack<int>::iterator ite = mstack.end();
+		MutantStack<int>::iterator ite = mstack.end() - 1;
 		std::cout << "-------------------|print bigin and end of stack using iterators|--------------------\n";
 		std::cout << "begin " << *it << std::endl;
-		std::cout << "end " << *ite << std::endl;
+		std::cout << "end " << *ite << std::endl; // this will print the last element in the stack
 		std::cout << "-------------------|Test if ++ work with iterator|--------------------\n";
 		++it;
 		std::cout << "begin " << *it << std::endl;
@@ -67,10 +67,10 @@ int main()
 		mstack.push("Intra");
 		mstack.push("CPP-Moudle-08");
 		MutantStack<std::string>::iterator it = mstack.begin();
-		MutantStack<std::string>::iterator ite = mstack.end();
+		MutantStack<std::string>::iterator ite = mstack.end() - 1;
 		std::cout << "-------------------|print bigin and end of stack using iterators|--------------------\n";
 		std::cout << "begin " << *it << std::endl;
-		std::cout << "end " << *ite << std::endl;
+		std::cout << "end " << *ite << std::endl; // this will print the last element in the stack
 		std::cout << "-------------------|Test if ++ work with iterator|--------------------\n";
 		++it;
 		std::cout << "begin " << *it << std::endl;
