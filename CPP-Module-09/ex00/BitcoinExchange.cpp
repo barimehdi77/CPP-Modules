@@ -102,9 +102,9 @@ void BitcoinExchange::parseInputFile(std::string fileName)
 			month = date.substr(0, date.find('-'));
 			date.erase(date.begin(), date.begin() + date.find('-') + 1);
 			day = date.substr(0, date.length());
+			date = line.substr(0, del);
+			date.pop_back();
 			if (this->validateDate(std::stoi(year), std::stoi(month), std::stoi(day))) {
-				date = line.substr(0, del);
-				date.pop_back();
 				double totalValue = this->bitcoinConverter(date, std::stod(value));
 				if (totalValue == -1) {
 					std::cout << "Error: not a positive number" << std::endl;
