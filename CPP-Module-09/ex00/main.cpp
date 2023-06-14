@@ -6,7 +6,7 @@
 /*   By: barimehdi77 <barimehdi77@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 12:31:18 by mbari             #+#    #+#             */
-/*   Updated: 2023/06/13 12:23:02 by barimehdi77      ###   ########.fr       */
+/*   Updated: 2023/06/14 17:00:36 by barimehdi77      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av) {
 
 	(void)av;
 	if (ac != 2) {
-		std::cout << "Error: No file!" << std::endl;
+		std::cout << "Error: could not open file." << std::endl;
 		return 1;
 	}
 

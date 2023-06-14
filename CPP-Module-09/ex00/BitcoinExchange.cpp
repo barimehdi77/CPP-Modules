@@ -77,6 +77,11 @@ void BitcoinExchange::parseInputFile(std::string fileName)
 	bool firstLine = false;
 	std::ifstream dataFile(fileName);
 
+	if (!dataFile.is_open()) {
+		std::cout << "Error: could not open file." << std::endl;
+		return ;
+	}
+
 	while (getline(dataFile, line))
 	{
 		if (firstLine)
