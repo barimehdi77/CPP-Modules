@@ -35,6 +35,10 @@ class BitcoinExchange
 		BitcoinExchange & operator = ( const BitcoinExchange & rhs );
 		std::map<std::string, double> getData() const;
 
-		void parseFile();
+		void parseDataFile();
+		void parseInputFile(std::string fileName);
+		bool validateDate(int year, int month, int day);
+		bool isLeap(int year);
+		double bitcoinConverter(std::string date, double value);
 
 };
