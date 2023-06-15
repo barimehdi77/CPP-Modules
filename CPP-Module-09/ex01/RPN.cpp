@@ -6,7 +6,7 @@
 /*   By: barimehdi77 <barimehdi77@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:11:57 by barimehdi77       #+#    #+#             */
-/*   Updated: 2023/06/15 10:55:33 by barimehdi77      ###   ########.fr       */
+/*   Updated: 2023/06/15 11:29:54 by barimehdi77      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,15 @@ void RPN::parseArg(std::string arg)
 		{
 			std::cout << "Error" << std::endl;
 			exit(1);
-		} else if (this->_stack.size() > 2 && isdigit(arg[i]))
-		{
-			std::cout << "Error" << std::endl;
-			exit(1);
-		} else if (isOperator(arg[i]) && this->_stack.size() != 2)
+		}
+		else if (isOperator(arg[i]) && this->_stack.size() < 2)
 		{
 			std::cout << "Error" << std::endl;
 			exit(1);
 		}
 		if (isdigit(arg[i]))
 			this->_stack.push(arg[i] - '0');
-		else if (isOperator(arg[i]) && this->_stack.size() == 2) {
+		else if (isOperator(arg[i]) && this->_stack.size() >= 2) {
 			int second = this->_stack.top();
 			this->_stack.pop();
 			int first = this->_stack.top();
@@ -76,5 +73,21 @@ void RPN::parseArg(std::string arg)
 		}
 		i++;
 	}
-	std::cout << this->_stack.top() << std::endl;
+	if (this->_stack.size() == 1)
+		std::cout << this->_stack.top() << std::endl;
+	else
+		std::cout << "Error" << std::endl;
 }
+
+
+
+// void RPN::printStack(std::stack<int> s)
+// {
+//     if (s.empty())
+//         return;
+//     int x = s.top();
+//     s.pop();
+//     printStack(s);
+//     std::cout << "| " << x << " |" << std::endl;
+//     s.push(x);
+// }

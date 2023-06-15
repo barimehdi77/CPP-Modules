@@ -6,7 +6,7 @@
 /*   By: barimehdi77 <barimehdi77@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:06:42 by barimehdi77       #+#    #+#             */
-/*   Updated: 2023/06/15 10:32:47 by barimehdi77      ###   ########.fr       */
+/*   Updated: 2023/06/15 11:29:04 by barimehdi77      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ class RPN
 		std::stack<int> getStack() const;
 		bool isOperator(char op);
 		void parseArg(std::string arg);
+		// void printStack(std::stack<int> s);
 };
