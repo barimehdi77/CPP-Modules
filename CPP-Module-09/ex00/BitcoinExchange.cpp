@@ -1,34 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: barimehdi77 <barimehdi77@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/14 17:11:53 by barimehdi77       #+#    #+#             */
+/*   Updated: 2023/06/14 17:15:25 by barimehdi77      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "./BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange()
-{
-	// throw BitcoinExchange::ArgsError();
-	// std::string line;
-
-	// std::ifstream dataFile("data.csv");
-
-	// while (getline(dataFile, line))
-	// {
-	// 	// Output the text from the file
-	// 	std::cout << line;
-	// }
-	// dataFile.close();
-}
-
-// BitcoinExchange::BitcoinExchange(std::string filePath)
-// {
-// 	std::string line;
-
-// 	ifstream dataFile(filePath);
-
-// 	while (getline(dataFile, myText))
-// 	{
-// 		// Output the text from the file
-// 		cout << myText;
-// 	}
-// 	dataFile.close;
-// 	// throw BitcoinExchange::ArgsError();
-// }
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) : _Data(src._Data)
 {
@@ -43,11 +28,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &rhs)
 		return (*this);
 	this->_Data = rhs._Data;
 	return (*this);
-}
-
-const char *BitcoinExchange::ArgsError::what() const throw()
-{
-	return ("bit: No file!");
 }
 
 std::map<std::string, double> BitcoinExchange::getData() const { return (this->_Data); }

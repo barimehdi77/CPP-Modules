@@ -28,10 +28,7 @@ class BitcoinExchange
 		// BitcoinExchange( std::string filePath );
 		BitcoinExchange( const BitcoinExchange & src );
 		~BitcoinExchange();
-		class ArgsError: public std::exception
-		{
-			virtual const char* what() const throw();
-		};
+
 		BitcoinExchange & operator = ( const BitcoinExchange & rhs );
 		std::map<std::string, double> getData() const;
 

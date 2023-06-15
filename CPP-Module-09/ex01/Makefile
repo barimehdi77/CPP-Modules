@@ -6,17 +6,17 @@
 #    By: barimehdi77 <barimehdi77@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/18 12:40:37 by mbari             #+#    #+#              #
-#    Updated: 2023/06/14 17:37:58 by barimehdi77      ###   ########.fr        #
+#    Updated: 2023/06/14 17:39:14 by barimehdi77      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Name of the final executable files
-NAME = ./btc
+NAME = ./RPN
 
 # Project's directories
 OBJECTSDIR = objects
-HEADERFILE = BitcoinExchange.hpp
+HEADERFILE = RPN.hpp
 
 # Name of variables
 FLAGS = -Wall -Wextra -Werror
@@ -27,7 +27,7 @@ BLUE = \033[1;34m
 RESET = \033[0m
 
 # Exercise files variable
-SRC_FILES = main.cpp BitcoinExchange.cpp
+SRC_FILES = main.cpp RPN.cpp
 
 # Define objects for all sources
 OBJS := $(SRC_FILES:.cpp=.o)
